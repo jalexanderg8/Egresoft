@@ -7,8 +7,10 @@ import android.os.Bundle;
 
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.fragments.FragmentContenedor;
+import com.example.foxconntech.egresoft.fragments.FragmentLogin;
 
-public class Principal extends AppCompatActivity implements FragmentContenedor.OnFragmentInteractionListener{
+    public class Principal extends AppCompatActivity implements FragmentContenedor.OnFragmentInteractionListener,
+    FragmentLogin.OnFragmentInteractionListener{
 
     Fragment miFragment;
     @Override
@@ -16,8 +18,6 @@ public class Principal extends AppCompatActivity implements FragmentContenedor.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        miFragment=new FragmentContenedor();
-        getSupportFragmentManager().beginTransaction().replace(R.id.principal,miFragment).commit();
 
 
 
