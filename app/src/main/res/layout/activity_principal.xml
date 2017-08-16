@@ -9,10 +9,12 @@
     tools:context="com.example.foxconntech.egresoft.activitys.Principal">
 
 
+
     <FrameLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
         android:layout_weight="2">
 
     </FrameLayout>
