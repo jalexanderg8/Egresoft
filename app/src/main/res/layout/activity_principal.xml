@@ -8,8 +8,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.foxconntech.egresoft.activitys.Principal">
 
-
-
     <FrameLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
@@ -23,8 +21,8 @@
         android:id="@+id/menu_inferior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary"
+        android:layout_weight="0"
+        android:background="@android:color/transparent"
         design:menu="@menu/bottom_menu">
 
     </android.support.design.widget.BottomNavigationView>
