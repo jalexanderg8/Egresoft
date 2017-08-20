@@ -4,11 +4,17 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.foxconntech.egresoft.Adaptadores.Adaptador_Eventos;
 import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.vo.Evento_Vo;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +35,10 @@ public class EventosFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    ArrayList<Evento_Vo> ListaEventos;
+RecyclerView EventosRecycler;
+
 
     public EventosFragment() {
         // Required empty public constructor
@@ -65,7 +75,22 @@ public class EventosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_eventos, container, false);
+
+View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
+        EventosRecycler=vista.findViewById(R.id.recycler_Eventos);
+
+        llenarLista();
+        EventosRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        Adaptador_Eventos adaptador=new Adaptador_Eventos(ListaEventos);
+        EventosRecycler.setAdapter(adaptador);
+
+        return vista;
+    }
+
+    private void llenarLista() {
+        ListaEventos=new ArrayList<>();
+        ListaEventos.add(new Evento_Vo("evento","en el sena","43 de octubre",R.drawable.convenios2));
     }
 
     // TODO: Rename method, update argument and hook method into UI event

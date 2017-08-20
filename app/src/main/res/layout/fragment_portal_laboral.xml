@@ -6,11 +6,6 @@
     android:background="#ffff"
     tools:context="com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment">
 
-    {<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="wrap_content"
-    android:layout_height="170dp"
-    app:srcCompat="@drawable/logo_sena_negro"
-    android:layout_marginTop="-20dp"/>
+
 
 </FrameLayout>
