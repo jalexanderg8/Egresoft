@@ -4,11 +4,17 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.foxconntech.egresoft.Adaptadores.Adaptador_P_Academico;
 import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.vo.Estudio_Vo;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +35,9 @@ public class P_AcademicoFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    ArrayList<Estudio_Vo> Lista_Estudios;
+    RecyclerView recyclerEstudios;
 
     public P_AcademicoFragment() {
         // Required empty public constructor
@@ -65,7 +74,26 @@ public class P_AcademicoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_p__academico, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_p__academico, container, false);
+
+        recyclerEstudios=(RecyclerView)view.findViewById(R.id.recycler_P_Academico);
+
+        llenarLista();
+        recyclerEstudios.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        Adaptador_P_Academico miAdaptador=new Adaptador_P_Academico(Lista_Estudios);
+        recyclerEstudios.setAdapter(miAdaptador);
+
+        return view;
+    }
+
+    private void llenarLista() {
+        Lista_Estudios=new ArrayList<>();
+
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en analisis y desarrollo de sistemas de informacion","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

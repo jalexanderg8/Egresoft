@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         card_view:cardBackgroundColor="#fff9"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+          <!--  <ImageView
                 android:id="@+id/Foto_P_Academico"
                 android:layout_width="86dp"
                 android:layout_height="76dp"
@@ -29,7 +29,7 @@
                 app:srcCompat="@mipmap/ic_launcher"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true" />
-
+-->
             <TextView
                 android:id="@+id/nombre_Estudio"
                 android:text="kasdjhfaosdifuhgaosdif"
@@ -38,11 +38,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="11dp"
-                android:layout_toEndOf="@+id/Foto_P_Academico"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="24dp"
-                android:layout_toRightOf="@+id/Foto_P_Academico" />
+              />
 
             <TextView
                 android:id="@+id/direccion_Estudio"
@@ -62,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/direccion_Estudio"
-                android:textSize="10dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:text="hhhhhhhhhhhhhhhhhhhh"
                 android:layout_alignStart="@+id/direccion_Estudio"

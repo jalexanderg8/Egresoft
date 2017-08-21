@@ -1,34 +1,56 @@
 package com.example.foxconntech.egresoft.Adaptadores;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * Created by JULIAN HENAO on 20/08/2017.
- */
+import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.vo.Estudio_Vo;
+
+import java.util.ArrayList;
+
 
 public class Adaptador_P_Academico extends RecyclerView.Adapter<Adaptador_P_Academico.ViewHolderP_Academico>{
 
+ArrayList<Estudio_Vo> Lista_Estudios;
+
+    public Adaptador_P_Academico(ArrayList<Estudio_Vo> lista_Estudios) {
+        Lista_Estudios = lista_Estudios;
+    }
 
     @Override
     public ViewHolderP_Academico onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_p_academico,null,false);
+        return new ViewHolderP_Academico(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolderP_Academico holder, int position) {
 
+        holder.nombre.setText(Lista_Estudios.get(position).getNombre());
+        holder.direccion.setText(Lista_Estudios.get(position).getDireccion());
+        holder.horarios.setText(Lista_Estudios.get(position).getHorarios());
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return Lista_Estudios.size();
     }
 
     public class ViewHolderP_Academico extends RecyclerView.ViewHolder {
+        TextView nombre,horarios,direccion;
+       // ImageView imagen;
+
         public ViewHolderP_Academico(View itemView) {
             super(itemView);
+
+            nombre=(TextView)itemView.findViewById(R.id.nombre_Estudio);
+            horarios=(TextView)itemView.findViewById(R.id.horarios_Estudio);
+            direccion=(TextView)itemView.findViewById(R.id.direccion_Estudio);
+           // imagen=(ImageView)itemView.findViewById(R.id.Foto_P_Academico);
         }
     }
 }
