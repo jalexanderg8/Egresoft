@@ -31,7 +31,7 @@
                 android:layout_alignParentTop="true" />
 
             <TextView
-                android:id="@+id/nombre_P_Academico"
+                android:id="@+id/nombre_Estudio"
                 android:text="kasdjhfaosdifuhgaosdif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,28 +45,28 @@
                 android:layout_toRightOf="@+id/Foto_P_Academico" />
 
             <TextView
-                android:id="@+id/direccion_P_Academico"
+                android:id="@+id/direccion_Estudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nombre_P_Academico"
+                android:layout_below="@+id/nombre_Estudio"
                 android:layout_alignParentEnd="true"
                 android:textSize="15dp"
                 android:text="jjjjjjjjjjjjjjjjjjjj"
                 android:textStyle="italic"
-                android:layout_alignStart="@+id/nombre_P_Academico"
+                android:layout_alignStart="@+id/nombre_Estudio"
                 android:layout_alignParentRight="true"
-                android:layout_alignLeft="@+id/nombre_P_Academico" />
+                android:layout_alignLeft="@+id/nombre_Estudio" />
 
             <TextView
-                android:id="@+id/fecha_P_Academico"
+                android:id="@+id/horarios_Estudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/direccion_P_Academico"
+                android:layout_below="@+id/direccion_Estudio"
                 android:textSize="10dp"
                 android:textStyle="bold"
                 android:text="hhhhhhhhhhhhhhhhhhhh"
-                android:layout_alignStart="@+id/direccion_P_Academico"
-                android:layout_alignLeft="@+id/direccion_P_Academico" />
+                android:layout_alignStart="@+id/direccion_Estudio"
+                android:layout_alignLeft="@+id/direccion_Estudio" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
