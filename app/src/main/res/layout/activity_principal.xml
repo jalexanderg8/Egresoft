@@ -13,7 +13,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="170dp"
+        android:layout_height="120dp"
+        android:background="#000"
         design:srcCompat="@drawable/logo_sena_negro"
         android:layout_marginTop="-20dp"/>
 
@@ -21,11 +22,8 @@
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="34dp"
-        android:layout_marginTop="-16dp"
         android:layout_weight="2"
         android:background="@color/colorPrimaryDark"
-        android:layout_alignBottom="@+id/floatingActionsMenu2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView">

@@ -91,6 +91,8 @@ View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
     private void llenarLista() {
         ListaEventos=new ArrayList<>();
         ListaEventos.add(new Evento_Vo("evento","en el sena","43 de octubre",R.drawable.convenios2));
+        ListaEventos.add(new Evento_Vo("evento","en el sena","43 de octubre",R.drawable.logo_sena_verde));
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
