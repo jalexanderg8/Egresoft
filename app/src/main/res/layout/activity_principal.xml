@@ -47,7 +47,6 @@
         android:layout_height="60dp"
         android:layout_weight="0"
         android:background="@android:color/transparent"
-        design:menu="@menu/bottom_menu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"

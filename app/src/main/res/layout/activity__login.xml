@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.foxconntech.egresoft.Fragments.FragmentLogin">
+    android:layout_height="match_parent">
 
 
     <EditText
@@ -36,15 +35,18 @@
         android:text="Egresado"
         android:layout_below="@+id/editText8"
         android:layout_alignLeft="@+id/editText8"
-        android:layout_alignStart="@+id/editText8" />
+        android:layout_alignStart="@+id/editText8"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/btnInvitado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btnEgresado"
-        android:layout_alignEnd="@+id/editText8"
-        android:text="Invitado" />
+        android:text="Invitado"
+        android:layout_alignRight="@+id/editText8"
+        android:onClick="onClick"/>
+
 
 
 </RelativeLayout>

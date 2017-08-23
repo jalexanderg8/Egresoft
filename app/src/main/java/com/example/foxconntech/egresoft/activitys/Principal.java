@@ -1,5 +1,6 @@
 package com.example.foxconntech.egresoft.activitys;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,55 +11,104 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
-import com.example.foxconntech.egresoft.Fragments.FragmentLogin;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
 import com.example.foxconntech.egresoft.R;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,P_AcademicoFragment.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener,FragmentLogin.OnFragmentInteractionListener{
+,PortalLaboralFragment.OnFragmentInteractionListener{
 
-    BottomNavigationView menu;
+    BottomNavigationView menuInferior;
     Fragment miFragment;
-
+    View pLaboral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
 
-        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+        menuInferior= (BottomNavigationView) findViewById(R.id.menu_inferior);
+        pLaboral=(View) findViewById(R.id.laboral);
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (Activity_Login.invitado){
+            menuInferior.inflateMenu(R.menu.menu_invitado);
 
-                switch (item.getItemId()) {
+            menuInferior.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
-                    case R.id.laboral:
-                        miFragment=new PortalLaboralFragment();
-                        //pLaboral.set
-                        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
-                        break;
-                    case R.id.Academica:
-                        miFragment=new P_AcademicoFragment();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
-                        break;
-                    case R.id.Eventos:
-                        miFragment=new EventosFragment();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
-                        break;
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+                    switch (item.getItemId()) {
+
+                        case R.id.Academica:
+                            miFragment=new P_AcademicoFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                            break;
+                        case R.id.Eventos:
+                            miFragment=new EventosFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                            break;
+                        case R.id.salida:
+                            finish();
+                            break;
+                    }
+
+                    return true;
                 }
+            });
 
-                return true;
-            }
-        });
+        }else{
+            menuInferior.inflateMenu(R.menu.menu_egresado);
+
+            menuInferior.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+
+                        case R.id.laboral:
+                            miFragment=new PortalLaboralFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                            break;
+                        case R.id.Academica:
+                            miFragment=new P_AcademicoFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                            break;
+                        case R.id.Eventos:
+                            miFragment=new EventosFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                            break;
+                    }
+
+                    return true;
+                }
+            });
+
+
+        }
+
+
+
     }
 
+ /*   @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        if (Activity_Login.invitado){
+            invalidateOptionsMenu();
+            menuInferior.inflateMenu(R.menu.menu_invitado);
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }*/
 
     @Override
+
     public void onFragmentInteraction(Uri uri) {
 
     }
@@ -68,8 +118,8 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
 
         if (R.id.Cerrar_sesion==view.getId()){
-            miFragment=new FragmentLogin();
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+            Intent miIntento=new Intent(Principal.this,Activity_Login.class);
+            startActivity(miIntento);
             fabPrincipal.collapse();
         }
     }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item
+        android:id="@+id/Academica"
+        android:icon="@drawable/oferta_academica"
+        android:title="Oferta Academica" />
+
+
+    <item
+        android:id="@+id/Eventos"
+        android:icon="@drawable/eventos"
+        android:title="Eventos" />
+
+    <item
+        android:id="@+id/convenios"
+        android:icon="@drawable/convenios2"
+        android:title="Convenios" />
+
+    <item
+        android:id="@+id/Contactenos"
+        android:icon="@drawable/contactenos"
+        android:title="Contactenos" />
+    <item
+        android:id="@+id/salida"
+        android:icon="@drawable/icono_salir"
+        android:title="Portal Laboral"
+        android:enabled="true"/>
+
+
+
+
+
+</menu>
