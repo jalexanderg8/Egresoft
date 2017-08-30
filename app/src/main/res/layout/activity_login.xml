@@ -45,7 +45,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bordes"
         android:layout_marginTop="70dp"
-        android:text="Button"
+        android:text="Egresado"
+        android:textColor="@color/sena1"
         android:layout_below="@+id/contraseña"
         android:layout_centerHorizontal="true" />
 
@@ -55,8 +56,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bordes"
         android:layout_marginTop="54dp"
-        android:text="Button"
-
+        android:textColor="@color/sena1"
+        android:text="Invitado"
         android:layout_below="@+id/btnIngEgresado"
         android:layout_alignLeft="@+id/btnIngEgresado"
         android:layout_alignStart="@+id/btnIngEgresado" />
