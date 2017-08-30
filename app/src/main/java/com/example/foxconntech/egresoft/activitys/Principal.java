@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
-import com.example.foxconntech.egresoft.Fragments.FragmentLogin;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
 import com.example.foxconntech.egresoft.R;

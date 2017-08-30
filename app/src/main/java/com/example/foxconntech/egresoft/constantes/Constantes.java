@@ -22,6 +22,8 @@ import android.provider.BaseColumns;
         public static final String COLUMNA_TELEFONO = "telefono";
         public static final String COLUMNA_GENERO = "genero";
         public static final String COLUMNA_ESTADO_CIVIL = "estado_civil";
+        public static final String COLUMNA_TIPO_MODALIDAD="tipo_modalidad";
+        public static final String COLUMNA_NOMBRE_TITULACION="nombre_titulacion";
         public static final String COLUMNA_ESTA_LABORANDO = "esta_laborando";
         public static final String COLUMNA_DEACUERDO = "tiene_empleo_deacuerdo";
         public static final String COLUMNA_LE_GUSTARIA_RECIBIR = "recibir_correos";
@@ -35,13 +37,6 @@ import android.provider.BaseColumns;
         public static final String COLUMNA_ID_EMAIL_ALTERNO = "id_email";
         public static final String COLUMNA_EMAIL_ALTERNO="direccion_de_email";
 
-        public static final String TABLA_TITULACIION="titulacion";
-        public static final String COLUMNA_ID_TITULACION="id_titulacion";
-        public static final String COLUMNA_NOMBRE_TITULACION="nombre_titulacion";
-
-        public static final String TABLA_MODALIDAD="modalidad";
-        public static final String COLUMNA_ID_MODALIDAD="id_modalidad";
-        public static final String COLUMNA_TIPO_MODALIDAD="tipo_modalidad";
 
         public static final String TEXT_TYPE = " TEXT ";
         public static final String COMMA_SEP = ",";
@@ -59,6 +54,8 @@ import android.provider.BaseColumns;
                         COLUMNA_ESTADO_CIVIL+TEXT_TYPE+NOT_NULL+COMMA_SEP+
                         COLUMNA_ESTA_LABORANDO+TEXT_TYPE+NOT_NULL+COMMA_SEP+
                         COLUMNA_DEACUERDO+TEXT_TYPE+NOT_NULL+COMMA_SEP+
+                        "FOREIGN KEY(id_telefono) REFERENCES telefono_alterno(id_telefono)"+
+                        "FOREIGN KEY(id_email) REFERENCES email_alterno(id_email)"+
                         COLUMNA_LE_GUSTARIA_RECIBIR+ TEXT_TYPE +NOT_NULL+ " )";
 
         public static final String BORRAR_TABLA_EGRESADO =
@@ -79,22 +76,6 @@ import android.provider.BaseColumns;
 
         public static final String BORRAR_TABLA_EMAIL_ALTERNO =
                 "DROP TABLE IF EXISTS " + TABLA_EMAIL_ALTERNO;
-
-        public static final String CREAR_TABLA_TITULACION =
-                "CREATE TABLE " + TABLA_TITULACIION+ "("+
-                        COLUMNA_ID_TITULACION+TEXT_TYPE+COMMA_SEP+
-                        COLUMNA_NOMBRE_TITULACION+TEXT_TYPE+ " )";
-
-        public static final String BORRAR_TABLA_TITULACION =
-                "DROP TABLE IF EXISTS " + TABLA_TITULACIION;
-
-        public static final String CREAR_TABLA_MODALIDAD =
-                "CREATE TABLE " + TABLA_MODALIDAD+ "("+
-                        COLUMNA_ID_MODALIDAD+TEXT_TYPE+COMMA_SEP+
-                        COLUMNA_TIPO_MODALIDAD+TEXT_TYPE+ " )";
-
-        public static final String BORRAR_TABLA_MODALIDAD =
-                "DROP TABLE IF EXISTS " + TABLA_MODALIDAD;
 
     }
 }
