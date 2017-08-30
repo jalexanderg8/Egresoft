@@ -1,7 +1,9 @@
-package com.example.foxconntech.egresoft;
+package com.example.foxconntech.egresoft.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.foxconntech.egresoft.R;
 
 public class Login extends AppCompatActivity {
 
@@ -9,5 +11,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 }

@@ -16,7 +16,7 @@ import com.example.foxconntech.egresoft.R;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,P_AcademicoFragment.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener,FragmentLogin.OnFragmentInteractionListener{
+,PortalLaboralFragment.OnFragmentInteractionListener{
 
     BottomNavigationView menu;
     Fragment miFragment;
@@ -67,8 +67,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
 
         if (R.id.Cerrar_sesion==view.getId()){
-            miFragment=new FragmentLogin();
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+
             fabPrincipal.collapse();
         }
     }
