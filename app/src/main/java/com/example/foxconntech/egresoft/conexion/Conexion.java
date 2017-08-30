@@ -25,9 +25,8 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
 
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EGRESADO);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EMAIL_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_MODALIDAD);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_TELEFONO_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_TITULACION);
+
 
     }
 
@@ -36,9 +35,7 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
 
         db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_EGRESADO);
         db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_EMAIL_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_MODALIDAD);
         db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_TELEFONO_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_TITULACION);
         onCreate(db);
 
     }

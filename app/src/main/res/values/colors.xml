@@ -9,4 +9,7 @@
     <color name="secondary_text">#757575</color>
     <color name="icons">#388E3C</color>
     <color name="divider">#BDBDBD</color>
+    <color name="sena1">#fc7323</color>
+    <color name="sena2">#238276</color>
+    <color name="sena3">#596548</color>
 </resources>
