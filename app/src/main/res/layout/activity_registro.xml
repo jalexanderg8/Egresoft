@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/movil6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foxconntech.egresoft.Registro">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textColor="@color/sena1"
+        android:text="Bienvenido Egresado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <AutoCompleteTextView
+        android:id="@+id/txtNombres"
+        android:layout_marginBottom="5dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bordes"
+        android:inputType="text"
+        android:hint="Nombres"
+        android:textColorHint="@color/sena1"
+        android:textAlignment="center"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <AutoCompleteTextView
+        android:id="@+id/txtApellido1"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bordes"
+        android:inputType="text"
+        android:hint="Primer Apellido"
+        android:textColorHint="@color/sena1"
+        android:textAlignment="center"
+        android:layout_below="@+id/txtNombres"
+        android:layout_alignLeft="@+id/txtNombres"
+        android:layout_alignStart="@+id/txtNombres" />
+
+    <AutoCompleteTextView
+        android:id="@+id/txtApellido2"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bordes"
+        android:inputType="text"
+        android:hint="Segundo Apellido"
+        android:textColorHint="@color/sena1"
+        android:textAlignment="center"
+        android:layout_below="@+id/txtApellido1"
+        android:layout_alignLeft="@+id/txtApellido1"
+        android:layout_alignStart="@+id/txtApellido1" />
+
+</RelativeLayout>
