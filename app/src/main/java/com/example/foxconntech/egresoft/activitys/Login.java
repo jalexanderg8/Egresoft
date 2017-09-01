@@ -30,8 +30,8 @@ public class Login extends AppCompatActivity {
                 i=new Intent(this,Principal.class);
                 startActivity(i);
             case R.id.lblRegistrarse:
-
-
+                i=new Intent(this,Registro.class);
+                startActivity(i);
         }
     }
 }

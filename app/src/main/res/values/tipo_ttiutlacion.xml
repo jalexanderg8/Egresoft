@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="combo_titulacion">
+
+        <item>Titulacion</item>
+        <item>Tecnologo</item>
+        <item>Tecnico Profesional</item>
+        <item>Tecnico</item>
+        <item>Auxiliar</item>
+        <item>Operrario</item>
+
+    </string-array>
+
+</resources>
