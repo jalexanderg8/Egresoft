@@ -6,7 +6,6 @@
         android:icon="@drawable/oferta_academica"
         android:title="Oferta Academica" />
 
-
     <item
         android:id="@+id/Eventos"
         android:icon="@drawable/eventos"
@@ -16,11 +15,11 @@
         android:id="@+id/convenios"
         android:icon="@drawable/convenios2"
         android:title="Convenios" />
-
     <item
-        android:id="@+id/Contactenos"
-        android:icon="@drawable/contactenos"
-        android:title="Contactenos" />
+        android:id="@+id/informacion"
+        android:icon="@drawable/convenios2"
+        android:title="informacion" />
+
     <item
         android:id="@+id/salida"
         android:icon="@drawable/icono_salir"

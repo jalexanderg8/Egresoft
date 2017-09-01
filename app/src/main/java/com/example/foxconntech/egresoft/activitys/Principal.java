@@ -7,13 +7,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
 import com.example.foxconntech.egresoft.R;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,P_AcademicoFragment.OnFragmentInteractionListener
 ,PortalLaboralFragment.OnFragmentInteractionListener{
@@ -28,6 +26,13 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         setContentView(R.layout.activity_principal);
 
         menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
+
+
+if (Login.tipo.equals("egresado")){
+menu.inflateMenu(R.menu.menu_egresado);
+}else if (Login.tipo.equals("invitado")){
+    menu.inflateMenu(R.menu.menu_invitado);
+}
 
         menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
@@ -62,13 +67,6 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
     }
 
-    public void onClick(View view) {
-        final FloatingActionsMenu fabPrincipal=(FloatingActionsMenu) findViewById(R.id.fabMenu);
 
 
-        if (R.id.Cerrar_sesion==view.getId()){
-
-            fabPrincipal.collapse();
-        }
-    }
 }
