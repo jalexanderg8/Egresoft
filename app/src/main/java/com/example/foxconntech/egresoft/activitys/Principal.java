@@ -1,11 +1,14 @@
 package com.example.foxconntech.egresoft.activitys;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
@@ -18,12 +21,15 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
     BottomNavigationView menu;
     Fragment miFragment;
-
+Toolbar barra_superior;
+    Intent miIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+        barra_superior= (Toolbar) findViewById(R.id.barra_superior);
+        setSupportActionBar(barra_superior);
 
         menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
 
@@ -54,6 +60,10 @@ menu.inflateMenu(R.menu.menu_egresado);
                         miFragment=new EventosFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
                         break;
+                    case R.id.salida:
+                        miIntent=new Intent(getApplicationContext(),Login.class);
+                        startActivity(miIntent);
+                        break;
                 }
 
                 return true;
@@ -67,6 +77,24 @@ menu.inflateMenu(R.menu.menu_egresado);
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.cerrar_sesion){
+            miIntent=new Intent(this,Login.class);
+            startActivity(miIntent);
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (Login.tipo.equals("egresado")){
+            getMenuInflater().inflate(R.menu.menu_superior,menu);
+            return true;
+
+        }else{
+            return false;
+        }
+    }
 }
