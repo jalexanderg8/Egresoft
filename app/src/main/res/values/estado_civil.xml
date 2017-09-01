@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="combo_estado_civil">
+
+        <item>Estado Civil</item>
+        <item>Casado</item>
+        <item>Soltero</item>
+        <item>Union Libre</item>
+
+    </string-array>
+
+
+</resources>
