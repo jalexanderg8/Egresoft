@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="yo.action.MainActivity">
+    <item
+        android:id="@+id/cerrar_sesion"
+        android:orderInCategory="100"
+        android:title="cerrar_Cesion"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/informacion"
+        android:orderInCategory="100"
+        android:title="iunformacion"
+        app:showAsAction="never" />
+
+</menu>

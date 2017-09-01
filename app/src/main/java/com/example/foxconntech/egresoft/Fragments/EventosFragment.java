@@ -39,7 +39,6 @@ public class EventosFragment extends Fragment {
     ArrayList<Evento_Vo> ListaEventos;
 RecyclerView EventosRecycler;
 
-
     public EventosFragment() {
         // Required empty public constructor
     }
@@ -65,6 +64,7 @@ RecyclerView EventosRecycler;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -76,7 +76,11 @@ RecyclerView EventosRecycler;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+
+
 View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
+
+
         EventosRecycler=vista.findViewById(R.id.recycler_Eventos);
 
         llenarLista();
