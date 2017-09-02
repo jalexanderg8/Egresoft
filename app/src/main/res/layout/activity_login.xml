@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/dos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.foxconntech.egresoft.activitys.Login">
@@ -15,6 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:src="@drawable/logoegresoft"
         android:layout_marginTop="21dp" />
     <AutoCompleteTextView
         android:id="@+id/usuario"
@@ -41,7 +41,6 @@
         android:hint="   Contraseña"
         android:autofillHints="Contraseña"
         android:textColorHint="@color/divider"
-
         android:inputType="textPassword"
         android:maxLines="1"
         android:singleLine="true"

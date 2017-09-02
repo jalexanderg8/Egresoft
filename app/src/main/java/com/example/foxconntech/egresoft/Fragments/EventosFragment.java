@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.foxconntech.egresoft.Adaptadores.Adaptador_Eventos;
 import com.example.foxconntech.egresoft.R;
@@ -38,6 +40,8 @@ public class EventosFragment extends Fragment {
 
     ArrayList<Evento_Vo> ListaEventos;
 RecyclerView EventosRecycler;
+    Fragment miFragment;
+ Button registra;
 
     public EventosFragment() {
         // Required empty public constructor
@@ -76,10 +80,10 @@ RecyclerView EventosRecycler;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-
-
 View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
 
+
+        registra=vista.findViewById(R.id.btnRegistrarAlEvento);
 
         EventosRecycler=vista.findViewById(R.id.recycler_Eventos);
 
@@ -89,13 +93,23 @@ View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
         Adaptador_Eventos adaptador=new Adaptador_Eventos(ListaEventos);
         EventosRecycler.setAdapter(adaptador);
 
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"esta en:"+ListaEventos.get(EventosRecycler.getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_LONG).show();
+            }
+        });
         return vista;
     }
 
     private void llenarLista() {
         ListaEventos=new ArrayList<>();
-        ListaEventos.add(new Evento_Vo("evento","en el sena","43 de octubre",R.drawable.convenios2));
-        ListaEventos.add(new Evento_Vo("evento","en el sena","43 de octubre",R.drawable.logo_sena_verde));
+        ListaEventos.add(new Evento_Vo("evento de navidadcccccccccccccccc","sena centro de comercio y turismo","43 de octubre",R.drawable.navidad));
+        ListaEventos.add(new Evento_Vo("en tic confio","centro de convenviones armenia quindio","4 de septiembre",R.drawable.tic));
+        ListaEventos.add(new Evento_Vo("novenas de navidad","sena quindio","24 de diciembre",R.drawable.navidad));
+        ListaEventos.add(new Evento_Vo("novenas de navidad","sena quindio","24 de diciembre",R.drawable.logo_sena_verde));
+
+
 
     }
 
@@ -122,6 +136,8 @@ View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
         super.onDetach();
         mListener = null;
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

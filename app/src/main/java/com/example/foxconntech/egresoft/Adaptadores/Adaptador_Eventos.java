@@ -16,11 +16,11 @@ import java.util.ArrayList;
  * Created by JULIAN HENAO on 20/08/2017.
  */
 
-public class Adaptador_Eventos extends RecyclerView.Adapter<Adaptador_Eventos.ViewHolderEventos> {
+public class Adaptador_Eventos extends RecyclerView.Adapter<Adaptador_Eventos.ViewHolderEventos>implements View.OnClickListener {
 
 
 ArrayList<Evento_Vo> ListaEventos;
-
+private View.OnClickListener listener;
 
     public Adaptador_Eventos(ArrayList<Evento_Vo> listaEventos) {
         ListaEventos = listaEventos;
@@ -31,6 +31,7 @@ ArrayList<Evento_Vo> ListaEventos;
 
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_eventos,null,false);
 
+        view.setOnClickListener(this);
         return new ViewHolderEventos(view);
     }
 
@@ -47,6 +48,21 @@ ArrayList<Evento_Vo> ListaEventos;
     public int getItemCount() {
         return ListaEventos.size();
     }
+
+    public void setOnClickListener(View.OnClickListener listener){
+     this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if (listener!=null){
+            listener.onClick(view);
+        }
+
+    }
+
+
 
     public class ViewHolderEventos extends RecyclerView.ViewHolder {
 

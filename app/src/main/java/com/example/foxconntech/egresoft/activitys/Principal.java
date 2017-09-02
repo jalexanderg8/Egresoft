@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
@@ -80,8 +81,7 @@ menu.inflateMenu(R.menu.menu_egresado);
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.cerrar_sesion){
-            miIntent=new Intent(this,Login.class);
-            startActivity(miIntent);
+           finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -95,6 +95,13 @@ menu.inflateMenu(R.menu.menu_egresado);
 
         }else{
             return false;
+        }
+    }
+
+    public void onClick(View view) {
+        if (R.id.btnRegistrarAlEvento==view.getId()){
+            Intent  i=new Intent(this,Registro.class);
+            startActivity(i);
         }
     }
 }

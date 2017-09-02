@@ -12,9 +12,11 @@ import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 import java.util.ArrayList;
 
 
-public class Adaptador_P_Academico extends RecyclerView.Adapter<Adaptador_P_Academico.ViewHolderP_Academico>{
+public class Adaptador_P_Academico extends RecyclerView.Adapter<Adaptador_P_Academico.ViewHolderP_Academico>implements View.OnClickListener{
 
 ArrayList<Estudio_Vo> Lista_Estudios;
+
+    View.OnClickListener listener;
 
     public Adaptador_P_Academico(ArrayList<Estudio_Vo> lista_Estudios) {
         Lista_Estudios = lista_Estudios;
@@ -23,6 +25,9 @@ ArrayList<Estudio_Vo> Lista_Estudios;
     @Override
     public ViewHolderP_Academico onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_p_academico,null,false);
+
+        view.setOnClickListener(this);
+
         return new ViewHolderP_Academico(view);
     }
 
@@ -38,6 +43,18 @@ ArrayList<Estudio_Vo> Lista_Estudios;
     @Override
     public int getItemCount() {
         return Lista_Estudios.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if (listener!=null){
+listener.onClick(view);
+        }
     }
 
     public class ViewHolderP_Academico extends RecyclerView.ViewHolder {
