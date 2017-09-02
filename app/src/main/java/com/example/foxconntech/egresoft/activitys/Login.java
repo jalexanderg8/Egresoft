@@ -10,6 +10,7 @@ import com.example.foxconntech.egresoft.R;
 public class Login extends AppCompatActivity {
 
     Intent i;
+    int a=0;
     public static String tipo="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
