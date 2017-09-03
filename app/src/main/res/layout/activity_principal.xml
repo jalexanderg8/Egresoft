@@ -12,15 +12,13 @@
 
 
 
-   <android.support.v7.widget.Toolbar
-        android:id="@+id/barra_superior"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#0BB634"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        android:orientation="horizontal"
-
-        />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/barra_superior"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#0BB634"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:orientation="horizontal" />
 
 
     <ScrollView
