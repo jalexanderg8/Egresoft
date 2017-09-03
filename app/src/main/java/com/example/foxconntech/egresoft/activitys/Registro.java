@@ -16,7 +16,7 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-      comboTitulacion=(Spinner)findViewById(R.id.idSpinnerTitulacion);
+
         comboGenero=(Spinner)findViewById(R.id.idSpinnerGenero);
         comboEstadoCivil=(Spinner)findViewById(R.id.idSpinnerEstadoCivil);
 
