@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.foxconntech.egresoft.Fragments.ContactarFragment;
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
@@ -22,7 +23,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
     BottomNavigationView menu;
     Fragment miFragment;
-Toolbar barra_superior;
+    Toolbar barra_superior;
     Intent miIntent;
 
     @Override
@@ -59,6 +60,10 @@ menu.inflateMenu(R.menu.menu_egresado);
                         break;
                     case R.id.Eventos:
                         miFragment=new EventosFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                        break;
+                    case R.id.Contactenos:
+                        miFragment=new ContactarFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
                         break;
                     case R.id.salida:
