@@ -25,7 +25,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
     Fragment miFragment;
     Toolbar barra_superior;
     Intent miIntent;
-
+    String unic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
