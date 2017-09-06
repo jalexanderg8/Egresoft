@@ -24,8 +24,10 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EGRESADO);
-        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EMAIL_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_TELEFONO_ALTERNO);
+        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_CONVENIO);
+        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EVENTO);
+        db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_NOTICIAS);
+
 
 
     }
@@ -34,8 +36,10 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_EGRESADO);
-        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_EMAIL_ALTERNO);
-        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_TELEFONO_ALTERNO);
+        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_CONVENIO);
+        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_EVENTO);
+        db.execSQL(Constantes.DatosEgresados.BORRAR_TABLA_NOTICIAS);
+
         onCreate(db);
 
     }
