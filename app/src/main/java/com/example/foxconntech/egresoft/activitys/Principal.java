@@ -12,14 +12,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.R.*;
+
 import com.example.foxconntech.egresoft.Fragments.ContactarFragment;
 import com.example.foxconntech.egresoft.Fragments.EventosFragment;
+import com.example.foxconntech.egresoft.Fragments.InicioFragment;
 import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
 import com.example.foxconntech.egresoft.R;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,P_AcademicoFragment.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener{
+,PortalLaboralFragment.OnFragmentInteractionListener,ContactarFragment.OnFragmentInteractionListener,InicioFragment.OnFragmentInteractionListener{
 
     BottomNavigationView menu;
     Fragment miFragment;

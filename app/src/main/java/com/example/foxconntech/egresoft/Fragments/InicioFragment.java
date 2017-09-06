@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.foxconntech.egresoft.Adaptadores.Adaptador_Inicio;
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.vo.InicioVo;
 
