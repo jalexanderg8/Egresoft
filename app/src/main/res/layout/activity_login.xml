@@ -1,119 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:background="@drawable/dos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.foxconntech.egresoft.activitys.Login">
 
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
     <ImageView
 
         android:src="@drawable/logoegresoft"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="21dp" />
-    <AutoCompleteTextView
-        android:id="@+id/usuario"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:drawableLeft="@drawable/user"
-        android:paddingLeft="20dp"
-        android:background="@drawable/bordestext"
-        android:hint="     Correo Electronico"
-        android:inputType="text"
-        android:textColorHint="@color/divider"
-        android:autofillHints="Correo Electroonico"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
 
-    <AutoCompleteTextView
-        android:id="@+id/contraseña"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bordestext"
-        android:drawableLeft="@drawable/lock"
-        android:paddingLeft="20dp"
-        android:hint="   Contraseña"
-        android:autofillHints="Contraseña"
-        android:textColorHint="@color/divider"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/divider">
 
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/usuario"
-        android:layout_alignStart="@+id/usuario" />
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/usuario"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:autofillHints="Correo Electroonico"
+            android:background="@drawable/bordestext"
+            android:drawableLeft="@drawable/user"
+            android:hint="     Correo Electronico"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textColorHint="@color/divider"
+            android:layout_marginBottom="20dp" />
+
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/divider">
+
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/contraseña"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:autofillHints="Contraseña"
+            android:background="@drawable/bordestext"
+            android:drawableLeft="@drawable/lock"
+            android:hint="   Contraseña"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
+            android:layout_marginBottom="20dp"
+            android:textColorHint="@color/divider" />
+
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnEgresado"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/bordes"
-        android:layout_marginTop="30dp"
         android:text="Egresado"
         android:onClick="onClick"
         android:textColor="@color/divider"
-        android:layout_below="@+id/contraseña"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/btnInvitado"
+        android:layout_gravity="center"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/bordes"
         android:textColor="@color/divider"
         android:onClick="onClick"
-        android:text="Invitado"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/btnEgresado"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="50dp"
+        android:text="Invitado" />
 
-    <TextView
-        android:id="@+id/lblRegistrarse"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/divider"
-        android:text="Registrarse"
-        android:textSize="20dp"
-        android:layout_marginBottom="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/contraseña"
-        android:layout_alignStart="@+id/contraseña"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:onClick="onClick" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <TextView
-        android:textSize="20dp"
-        android:text="||"
-        android:textColor="@color/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblRegistrarse"
-        android:layout_alignBottom="@+id/lblRegistrarse"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        <TextView
+            android:id="@+id/lblRegistrarse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/divider"
+            android:text="Registrarse"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:onClick="onClick" />
 
-    <TextView
-        android:id="@+id/recuperarContra"
-        android:textSize="20dp"
-        android:textColor="@color/divider"
-        android:text="Recordar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
+        <TextView
+            android:textSize="20dp"
+            android:text="||"
+            android:layout_margin="10dp"
+            android:textColor="@color/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/recuperarContra"
+            android:textSize="20dp"
+            android:textColor="@color/divider"
+            android:text="Recordar"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
 
 
