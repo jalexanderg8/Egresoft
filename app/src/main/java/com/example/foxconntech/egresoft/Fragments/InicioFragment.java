@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.foxconntech.egresoft.Adaptadores.AdaptarConvenios;
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.vo.InicioVo;
 
@@ -81,7 +80,7 @@ public class InicioFragment extends Fragment {
         llenarLista();
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        AdaptarConvenios miAdaptador=new AdaptarConvenios(lista);
+        Adaptador_Inicio miAdaptador=new Adaptador_Inicio(lista);
         recycler.setAdapter(miAdaptador);
 
         return view;
