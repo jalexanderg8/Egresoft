@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.Principal"></activity>
+        <activity android:name=".activitys.Login"></activity>
         <activity android:name=".activitys.Registro"></activity>
     </application>
 
