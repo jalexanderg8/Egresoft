@@ -1,4 +1,4 @@
-package com.example.foxconntech.egresoft.Adaptadores;
+package com.example.foxconntech.egresoft.adaptadores;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

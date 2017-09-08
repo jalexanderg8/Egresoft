@@ -1,4 +1,4 @@
-package com.example.foxconntech.egresoft.Fragments;
+package com.example.foxconntech.egresoft.fragments;
 
 import android.content.Context;
 import android.net.Uri;

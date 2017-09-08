@@ -10,9 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.foxconntech.egresoft.Adaptadores.Adaptador_Inicio;
+import com.example.foxconntech.egresoft.adaptadores.AdaptarConvenios;
 import com.example.foxconntech.egresoft.R;
-import com.example.foxconntech.egresoft.vo.InicioVo;
+import com.example.foxconntech.egresoft.vo.ConveniosVo;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,7 @@ public class InicioFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    ArrayList<InicioVo> lista;
+    ArrayList<ConveniosVo> lista_convenios;
     RecyclerView recycler;
 
     public InicioFragment() {
@@ -76,24 +76,22 @@ public class InicioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_inicio, container, false);
 
-        recycler=(RecyclerView)view.findViewById(R.id.recycler_inicio);
+        recycler=(RecyclerView)view.findViewById(R.id.recycler_P_Academico);
 
         llenarLista();
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        Adaptador_Inicio miAdaptador=new Adaptador_Inicio(lista);
+        AdaptarConvenios miAdaptador=new AdaptarConvenios(lista_convenios);
         recycler.setAdapter(miAdaptador);
-
-        return view;
     }
     private void llenarLista()
     {
-        lista = new ArrayList<>();
-        lista.add(new InicioVo("Ofertas Laborales", R.mipmap.icono));
-        lista.add(new InicioVo("Contactenos", R.mipmap.bo));
-        lista.add(new InicioVo("Ofertas Academicas", R.mipmap.ofertas_academicas));
-        lista.add(new InicioVo("Noticias y Eventos", R.mipmap.noticias_eventos));
-        lista.add(new InicioVo("Convenios",R.mipmap.convenio));
+        lista_convenios = new ArrayList<>();
+        lista_convenios.add(new ConveniosVo("Ofertas Laborales", R.mipmap.icono));
+        lista_convenios.add(new ConveniosVo("Contactenos", R.mipmap.bo));
+        lista_convenios.add(new ConveniosVo("Ofertas Academicas", R.mipmap.ofertasacademicas));
+        lista_convenios.add(new ConveniosVo("Noticias y Eventos", R.mipmap.bot));
+        lista_convenios.add(new ConveniosVo("Convenios",R.mipmap.convenios));
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,31 +1,25 @@
-package com.example.foxconntech.egresoft.Fragments;
+package com.example.foxconntech.egresoft.fragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.foxconntech.egresoft.Adaptadores.Adaptador_P_Academico;
 import com.example.foxconntech.egresoft.R;
-import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link P_AcademicoFragment.OnFragmentInteractionListener} interface
+ * {@link PortalLaboralFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link P_AcademicoFragment#newInstance} factory method to
+ * Use the {@link PortalLaboralFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class P_AcademicoFragment extends Fragment {
+public class PortalLaboralFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,10 +31,7 @@ public class P_AcademicoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    ArrayList<Estudio_Vo> Lista_Estudios;
-    RecyclerView recyclerEstudios;
-
-    public P_AcademicoFragment() {
+    public PortalLaboralFragment() {
         // Required empty public constructor
     }
 
@@ -50,11 +41,11 @@ public class P_AcademicoFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment P_AcademicoFragment.
+     * @return A new instance of fragment PortalLaboralFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static P_AcademicoFragment newInstance(String param1, String param2) {
-        P_AcademicoFragment fragment = new P_AcademicoFragment();
+    public static PortalLaboralFragment newInstance(String param1, String param2) {
+        PortalLaboralFragment fragment = new PortalLaboralFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,36 +66,7 @@ public class P_AcademicoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        View view=inflater.inflate(R.layout.fragment_p__academico, container, false);
-
-        recyclerEstudios=(RecyclerView)view.findViewById(R.id.recycler_P_Academico);
-
-        llenarLista();
-        recyclerEstudios.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        Adaptador_P_Academico miAdaptador=new Adaptador_P_Academico(Lista_Estudios);
-        recyclerEstudios.setAdapter(miAdaptador);
-
-        miAdaptador.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Toast.makeText(getContext(),"esta en:"+Lista_Estudios.get(recyclerEstudios.getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_LONG).show();
-
-            }
-        });
-
-        return view;
-    }
-
-    private void llenarLista() {
-        Lista_Estudios=new ArrayList<>();
-
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en analisis y desarrollo de sistemas de informacion","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-
+        return inflater.inflate(R.layout.fragment_portal_laboral, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

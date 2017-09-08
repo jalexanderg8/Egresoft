@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffff"
-    tools:context="com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment">
+    tools:context="com.example.foxconntech.egresoft.P_AcademicoFragment">
 
 
 
