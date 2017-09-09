@@ -1,30 +1,24 @@
-package com.example.foxconntech.egresoft.Fragments;
+package com.example.foxconntech.egresoft.fragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.foxconntech.egresoft.adaptadores.AdaptarConvenios;
 import com.example.foxconntech.egresoft.R;
-import com.example.foxconntech.egresoft.vo.ConveniosVo;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link InicioFragment.OnFragmentInteractionListener} interface
+ * {@link ContactarFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link InicioFragment#newInstance} factory method to
+ * Use the {@link ContactarFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class InicioFragment extends Fragment {
+public class ContactarFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -36,10 +30,7 @@ public class InicioFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    ArrayList<ConveniosVo> lista_convenios;
-    RecyclerView recycler;
-
-    public InicioFragment() {
+    public ContactarFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +40,11 @@ public class InicioFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment InicioFragment.
+     * @return A new instance of fragment ContactarFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static InicioFragment newInstance(String param1, String param2) {
-        InicioFragment fragment = new InicioFragment();
+    public static ContactarFragment newInstance(String param1, String param2) {
+        ContactarFragment fragment = new ContactarFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,25 +64,8 @@ public class InicioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_inicio, container, false);
 
-        recycler=(RecyclerView)view.findViewById(R.id.recycler_P_Academico);
-
-        llenarLista();
-        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        AdaptarConvenios miAdaptador=new AdaptarConvenios(lista_convenios);
-        recycler.setAdapter(miAdaptador);
-    }
-    private void llenarLista()
-    {
-        lista_convenios = new ArrayList<>();
-        lista_convenios.add(new ConveniosVo("Ofertas Laborales", R.mipmap.icono));
-        lista_convenios.add(new ConveniosVo("Contactenos", R.mipmap.bo));
-        lista_convenios.add(new ConveniosVo("Ofertas Academicas", R.mipmap.ofertasacademicas));
-        lista_convenios.add(new ConveniosVo("Noticias y Eventos", R.mipmap.bot));
-        lista_convenios.add(new ConveniosVo("Convenios",R.mipmap.convenios));
+        return inflater.inflate(R.layout.fragment_contactar_admin, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

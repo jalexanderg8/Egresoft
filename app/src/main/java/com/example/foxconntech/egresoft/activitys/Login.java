@@ -26,16 +26,16 @@ public class Login extends AppCompatActivity {
 
            case  R.id.btnEgresado:
                tipo="egresado";
-           i=new Intent(this,Principal.class);
+           i=new Intent(Login.this,Principal.class);
             startActivity(i);
                break;
             case  R.id.btnInvitado:
                 tipo="invitado";
-                i=new Intent(this,Principal.class);
+                i=new Intent(Login.this,Principal.class);
                 startActivity(i);
                 break;
             case R.id.lblRegistrarse:
-                i=new Intent(this,Registro.class);
+                i=new Intent(Login.this,Registro.class);
                 startActivity(i);
         }
     }

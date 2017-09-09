@@ -12,15 +12,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.foxconntech.egresoft.Fragments.ContactarFragment;
-import com.example.foxconntech.egresoft.Fragments.EventosFragment;
-import com.example.foxconntech.egresoft.Fragments.P_AcademicoFragment;
-import com.example.foxconntech.egresoft.Fragments.PortalLaboralFragment;
 import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.fragments.ContactarFragment;
+import com.example.foxconntech.egresoft.fragments.EventosFragment;
+import com.example.foxconntech.egresoft.fragments.FragmentConvenio;
+import com.example.foxconntech.egresoft.fragments.P_AcademicoFragment;
+import com.example.foxconntech.egresoft.fragments.PortalLaboralFragment;
 
-public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,P_AcademicoFragment.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener{
+public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,
+        P_AcademicoFragment.OnFragmentInteractionListener
+,PortalLaboralFragment.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener,ContactarFragment.OnFragmentInteractionListener{
 
+    public static boolean info=false;
     BottomNavigationView menu;
     Fragment miFragment;
     Toolbar barra_superior;
@@ -36,11 +39,11 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
 
 
-if (Login.tipo.equals("egresado")){
-menu.inflateMenu(R.menu.menu_egresado);
-}else if (Login.tipo.equals("invitado")){
+      if (Login.tipo.equals("egresado")){
+      menu.inflateMenu(R.menu.menu_egresado);
+     }else if (Login.tipo.equals("invitado")){
     menu.inflateMenu(R.menu.menu_invitado);
-}
+     }
 
         menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
@@ -67,14 +70,28 @@ menu.inflateMenu(R.menu.menu_egresado);
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
                         break;
                     case R.id.salida:
-                        miIntent=new Intent(getApplicationContext(),Login.class);
-                        startActivity(miIntent);
+                        finish();
+                        break;
+                    case R.id.convenios:
+                        miFragment=new FragmentConvenio();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
+                        break;
+                    case R.id.informacionI:
+
+                        llamarSplash();
+
                         break;
                 }
 
                 return true;
             }
         });
+    }
+
+    private void llamarSplash() {
+        info=true;
+        miIntent=new Intent(getApplicationContext(),Splash.class);
+        startActivity(miIntent);
     }
 
 
@@ -87,6 +104,9 @@ menu.inflateMenu(R.menu.menu_egresado);
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.cerrar_sesion){
            finish();
+        }
+        if (item.getItemId()==R.id.informacion){
+            llamarSplash();
         }
 
         return super.onOptionsItemSelected(item);

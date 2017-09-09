@@ -16,7 +16,7 @@
         android:icon="@drawable/convenios2"
         android:title="Convenios" />
     <item
-        android:id="@+id/informacion"
+        android:id="@+id/informacionI"
         android:icon="@drawable/informcion"
         android:title="informacion" />
 

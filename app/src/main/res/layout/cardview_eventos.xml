@@ -90,7 +90,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="45dp"
-                    android:background="@drawable/bordes"
+                    android:background="@drawable/bordes_btn_verde"
                     android:onClick="onClick"
                     android:text="registrarme al evento"
                     android:textSize="10dp" />

@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".activitys.Login"></activity>
         <activity android:name=".activitys.Registro"></activity>
+        <activity android:name=".activitys.Principal"></activity>
+
     </application>
 
 </manifest>
