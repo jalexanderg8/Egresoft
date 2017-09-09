@@ -1,0 +1,84 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.foxconntech.egresoft.fragments.ContactarAdmin"
+    android:weightSum="1"
+    android:layout_marginBottom="30dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="ingrese su nombre"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bordes_campos_texto"
+        />
+
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bordes_campos_texto"
+        android:hint="ingrese su correo" />
+
+    <EditText
+        android:id="@+id/asunto"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:hint="asunto"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bordes_campos_texto"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/mensaje"
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+        android:hint="escriba su mensaje"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bordes_campos_texto"
+        android:layout_weight="0.49" />
+
+    <Button
+        android:id="@+id/enviar"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bordes_btn_verde"
+        android:layout_gravity="center"
+        android:text="Enviar" />
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bordes_btn_rojo"
+        android:layout_gravity="center"
+        android:text="Cancelar" />
+</LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
