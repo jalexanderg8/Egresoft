@@ -53,7 +53,7 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

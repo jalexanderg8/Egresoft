@@ -4,23 +4,28 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    >
 
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardBackgroundColor="#fff9"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="30dp"
-        app:cardElevation="10dp">
+        app:cardBackgroundColor="#FFC7C7"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="5dp"
+        card_view:cardBackgroundColor="#fff9">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-          <!--  <ImageView
+            <!--  <ImageView
                 android:id="@+id/Foto_P_Academico"
                 android:layout_width="86dp"
                 android:layout_height="76dp"
@@ -32,40 +37,39 @@
 -->
             <TextView
                 android:id="@+id/nombre_Estudio"
-                android:text="kasdjhfaosdifuhgaosdif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="11dp"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="24dp"
-              />
+                android:text="kasdjhfaosdifuhgaosdif"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/direccion_Estudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nombre_Estudio"
+                android:layout_alignLeft="@+id/nombre_Estudio"
                 android:layout_alignParentEnd="true"
-                android:textSize="15dp"
-                android:text="jjjjjjjjjjjjjjjjjjjj"
-                android:textStyle="italic"
-                android:layout_alignStart="@+id/nombre_Estudio"
                 android:layout_alignParentRight="true"
-                android:layout_alignLeft="@+id/nombre_Estudio" />
+                android:layout_alignStart="@+id/nombre_Estudio"
+                android:layout_below="@+id/nombre_Estudio"
+                android:text="jjjjjjjjjjjjjjjjjjjj"
+                android:textSize="10dp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/horarios_Estudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/direccion_Estudio"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="hhhhhhhhhhhhhhhhhhhh"
+                android:layout_alignLeft="@+id/direccion_Estudio"
                 android:layout_alignStart="@+id/direccion_Estudio"
-                android:layout_alignLeft="@+id/direccion_Estudio" />
+                android:layout_below="@+id/direccion_Estudio"
+                android:text="hhhhhhhhhhhhhhhhhhhh"
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

@@ -51,6 +51,31 @@ public class Adaptador_Convenios extends RecyclerView.Adapter<Adaptador_Convenio
 
     }
 
+/*
+
+    private void animateCircularReveal(View itemView) {
+        int centerX=0;
+        int centerY=0;
+        int startRadius=0;
+        int endRadius=Math.max(itemView.getWidth(), itemView.getHeight());
+        Animator animation= ViewAnimationUtils.createCircularReveal(itemView,centerX,centerY,startRadius,endRadius);
+        itemView.setVisibility(View.VISIBLE);
+        animation.start();
+    }
+
+    @Override
+    public void onViewAttachedToWindow(View view) {
+       // super.onViewAttachedToWindow(view);
+        animateCircularReveal(view);
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(View view) {
+
+    }
+*/
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView nombre;

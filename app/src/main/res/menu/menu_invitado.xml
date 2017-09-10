@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/convenios"
-        android:icon="@drawable/convenios2"
+        android:icon="@drawable/icono_convenios"
         android:title="Convenios" />
     <item
         android:id="@+id/informacionI"

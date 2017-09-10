@@ -104,6 +104,12 @@ public class P_AcademicoFragment extends Fragment {
 
         Lista_Estudios.add(new Estudio_Vo("tecnologia en analisis y desarrollo de sistemas de informacion","de lunes a viernes a las 3 am","sena galan sgasdg"));
         Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
 
     }
 

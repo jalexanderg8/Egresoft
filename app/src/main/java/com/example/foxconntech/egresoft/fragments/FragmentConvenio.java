@@ -92,10 +92,10 @@ Convenios_Recycler=vista.findViewById(R.id.recycler_Convenios);
 
     private void llenarLista() {
         ListaConvenios=new ArrayList<>();
-        ListaConvenios.add(new Convenio_vo("Universidad del quindio","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.convenio1));
-        ListaConvenios.add(new Convenio_vo("EAM","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.tic));
-        ListaConvenios.add(new Convenio_vo("Universidad la grancolombia","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.navidad));
-        ListaConvenios.add(new Convenio_vo("Remington","homologa 5 semestres","2pepito arturo sandoval 311544888",R.drawable.logo_sena_verde));
+        ListaConvenios.add(new Convenio_vo("Universidad del quindio","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.uniquindio));
+        ListaConvenios.add(new Convenio_vo("EAM","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.eam));
+        ListaConvenios.add(new Convenio_vo("Universidad la grancolombia","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.granco));
+        ListaConvenios.add(new Convenio_vo("Remington","homologa 5 semestres","2pepito arturo sandoval 311544888",R.drawable.remington));
 
 
 
