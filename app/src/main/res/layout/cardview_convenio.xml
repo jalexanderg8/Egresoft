@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:weightSum="1"
-    android:animateLayoutChanges="true"
-    >
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp">
 
-    <android.support.v7.widget.CardView
-        app:cardCornerRadius="2dp"
-        app:cardMaxElevation="5dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dp"
-        >
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/FotoConvenio"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/uniquindio"/>
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:padding="0dp"
-         >
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:id="@+id/relativeLayout"
+            android:layout_alignBottom="@+id/FotoConvenio"
+            android:background="@color/fondo_transparente">
 
-            <ImageView
-                android:id="@+id/FotoConvenio"
-                style="@style/Animation.AppCompat.Dialog"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/nombre_restaurante"
+                android:layout_width="wrap_content"
+                android:layout_height="45sp"
+                android:layout_gravity="left|bottom"
+                android:paddingLeft="16dp"
+                android:text="Nombre PgPaurante"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:layout_above="@+id/nombreConvenio"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/granco"
-                android:elevation="10dp" />
-
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="70dp"
-    android:orientation="vertical"
-    android:layout_alignParentBottom="true"
-    android:alpha="0.8"
-    android:background="@color/black"
-    >
-
-    <TextView
-        android:id="@+id/nombreConvenio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asfdgdsag"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
 
-    <TextView
-        android:id="@+id/informacion_Convenio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asfdgdsag"
-        android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/nombreConvenio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Nombre ciudad"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white"/>
 
-    <TextView
-        android:id="@+id/contactoConvenio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asfdgdsag"
-        android:textColor="@color/white" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/informacion_Convenio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="asfdgdsag"
+                android:textColor="@color/white"
+                android:layout_below="@+id/nombreConvenio"/>
 
+            <TextView
+                android:id="@+id/contactoConvenio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="asfdgdsag"
+                android:textColor="@color/white"
+                android:layout_below="@+id/informacion_Convenio"/>
 
         </RelativeLayout>
-
-
-
-    </android.support.v7.widget.CardView>
+    </RelativeLayout>
 
 </LinearLayout>

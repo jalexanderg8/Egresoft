@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.foxconntech.egresoft.R;
 
@@ -30,6 +33,9 @@ public class PortalLaboralFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    View vista;
+    String url="https://agenciapublicadeempleo.sena.edu.co/spe-web/spe/cartelera";
 
     public PortalLaboralFragment() {
         // Required empty public constructor
@@ -65,8 +71,24 @@ public class PortalLaboralFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_portal_laboral, container, false);
+
+        vista=inflater.inflate(R.layout.fragment_portal_laboral, container, false);
+
+        WebView web=(WebView)vista.findViewById(R.id.miWeb);
+        web.setWebViewClient(new myWebViewClient());
+        WebSettings settings= web.getSettings();
+        settings.setJavaScriptEnabled(true);
+        web.loadUrl(url);
+
+        return vista;
+    }
+    private class myWebViewClient extends WebViewClient{
+
+        public boolean shouldOverrideUrlLoading(WebView view,String url){
+
+            view.loadUrl(url);
+            return true;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
