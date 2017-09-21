@@ -14,13 +14,14 @@ import android.view.View;
 
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.fragments.ContactarFragment;
+import com.example.foxconntech.egresoft.fragments.Desarrolladores;
 import com.example.foxconntech.egresoft.fragments.EventosFragment;
 import com.example.foxconntech.egresoft.fragments.FragmentConvenio;
 import com.example.foxconntech.egresoft.fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.fragments.PortalLaboralFragment;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,
-        P_AcademicoFragment.OnFragmentInteractionListener
+        P_AcademicoFragment.OnFragmentInteractionListener,Desarrolladores.OnFragmentInteractionListener
 ,PortalLaboralFragment.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener,ContactarFragment.OnFragmentInteractionListener{
 
     public static boolean info=false;
@@ -104,10 +105,11 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.cerrar_sesion){
            finish();
-        }
-        if (item.getItemId()==R.id.informacion){
+        }else if (item.getItemId()==R.id.informacion){
             llamarSplash();
-        }
+        }else if (item.getItemId()==R.id.acercaDe){
+            miFragment=new Desarrolladores();
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();        }
 
         return super.onOptionsItemSelected(item);
     }
