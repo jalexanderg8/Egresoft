@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class Adaptador_P_Academico extends RecyclerView.Adapter<Adaptador_P_Academico.ViewHolderP_Academico>implements View.OnClickListener{
 
-ArrayList<Estudio_Vo> Lista_Estudios;
+    ArrayList<Estudio_Vo> Lista_Estudios;
 
-    View.OnClickListener listener;
+    private View.OnClickListener listener;
 
     public Adaptador_P_Academico(ArrayList<Estudio_Vo> lista_Estudios) {
         Lista_Estudios = lista_Estudios;
@@ -46,20 +46,20 @@ ArrayList<Estudio_Vo> Lista_Estudios;
     }
 
     public void setOnClickListener(View.OnClickListener listener){
-this.listener=listener;
+     this.listener=listener;
     }
 
     @Override
     public void onClick(View view) {
 
         if (listener!=null){
-listener.onClick(view);
+    listener.onClick(view);
         }
     }
 
     public class ViewHolderP_Academico extends RecyclerView.ViewHolder {
         TextView nombre,horarios,direccion;
-       // ImageView imagen;
+
 
         public ViewHolderP_Academico(View itemView) {
             super(itemView);
@@ -67,7 +67,7 @@ listener.onClick(view);
             nombre=(TextView)itemView.findViewById(R.id.nombre_Estudio);
             horarios=(TextView)itemView.findViewById(R.id.horarios_Estudio);
             direccion=(TextView)itemView.findViewById(R.id.direccion_Estudio);
-           // imagen=(ImageView)itemView.findViewById(R.id.Foto_P_Academico);
+
         }
     }
 }

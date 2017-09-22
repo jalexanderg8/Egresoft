@@ -15,21 +15,27 @@ import android.view.View;
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.fragments.ContactarFragment;
 import com.example.foxconntech.egresoft.fragments.Desarrolladores;
+import com.example.foxconntech.egresoft.fragments.DetalleAcademico;
+import com.example.foxconntech.egresoft.fragments.DetalleConvenio;
 import com.example.foxconntech.egresoft.fragments.EventosFragment;
 import com.example.foxconntech.egresoft.fragments.FragmentConvenio;
 import com.example.foxconntech.egresoft.fragments.P_AcademicoFragment;
 import com.example.foxconntech.egresoft.fragments.PortalLaboralFragment;
+import com.example.foxconntech.egresoft.interfaces.IComunicaFragments;
+import com.example.foxconntech.egresoft.vo.Convenio_vo;
+import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,
         P_AcademicoFragment.OnFragmentInteractionListener,Desarrolladores.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener,ContactarFragment.OnFragmentInteractionListener{
+,PortalLaboralFragment.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener
+        ,ContactarFragment.OnFragmentInteractionListener,DetalleAcademico.OnFragmentInteractionListener
+,DetalleConvenio.OnFragmentInteractionListener,IComunicaFragments{
 
     public static boolean info=false;
     BottomNavigationView menu;
     Fragment miFragment;
     Toolbar barra_superior;
     Intent miIntent;
-    String unic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,5 +136,26 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
             Intent  i=new Intent(this,Registro.class);
             startActivity(i);
         }
+    }
+
+    @Override
+    public void enviarEstudio(Estudio_Vo estudio_vo) {
+
+        DetalleAcademico detalleAcademico=new DetalleAcademico();
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("objeto",estudio_vo);
+        detalleAcademico.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,detalleAcademico).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void enviarConvenio(Convenio_vo convenio_vo) {
+        DetalleConvenio detalleConvenio=new DetalleConvenio();
+        Bundle miBundle=new Bundle();
+        miBundle.putSerializable("objeto",convenio_vo);
+        detalleConvenio.setArguments(miBundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,detalleConvenio).addToBackStack(null).commit();
     }
 }

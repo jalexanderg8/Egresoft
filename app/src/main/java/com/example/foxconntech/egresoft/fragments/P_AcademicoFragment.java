@@ -1,5 +1,6 @@
 package com.example.foxconntech.egresoft.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,8 +14,10 @@ import android.widget.Toast;
 
 import com.example.foxconntech.egresoft.adaptadores.Adaptador_P_Academico;
 import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.interfaces.IComunicaFragments;
 import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +28,7 @@ import java.util.ArrayList;
  * Use the {@link P_AcademicoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class P_AcademicoFragment extends Fragment {
+public class P_AcademicoFragment extends Fragment  implements Serializable{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,21 +40,15 @@ public class P_AcademicoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    ArrayList<Estudio_Vo> Lista_Estudios;
+    ArrayList<Estudio_Vo> lista_Estudios;
     RecyclerView recyclerEstudios;
+    Activity activity;
+    IComunicaFragments interfaceComunicaFragment;
 
     public P_AcademicoFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment P_AcademicoFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static P_AcademicoFragment newInstance(String param1, String param2) {
         P_AcademicoFragment fragment = new P_AcademicoFragment();
@@ -83,7 +80,7 @@ public class P_AcademicoFragment extends Fragment {
         llenarLista();
         recyclerEstudios.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        Adaptador_P_Academico miAdaptador=new Adaptador_P_Academico(Lista_Estudios);
+        Adaptador_P_Academico miAdaptador=new Adaptador_P_Academico(lista_Estudios);
         recyclerEstudios.setAdapter(miAdaptador);
 
         miAdaptador.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +88,11 @@ public class P_AcademicoFragment extends Fragment {
             public void onClick(View view) {
 
 
-                Toast.makeText(getContext(),"esta en:"+Lista_Estudios.get(recyclerEstudios.getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"esta en:"+lista_Estudios.get(recyclerEstudios
+                        .getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_SHORT).show();
+
+                interfaceComunicaFragment.enviarEstudio(lista_Estudios.get(recyclerEstudios.
+                        getChildAdapterPosition(view)));
 
             }
         });
@@ -100,16 +101,16 @@ public class P_AcademicoFragment extends Fragment {
     }
 
     private void llenarLista() {
-        Lista_Estudios=new ArrayList<>();
+        lista_Estudios=new ArrayList<>();
 
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en analisis y desarrollo de sistemas de informacion","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
-        Lista_Estudios.add(new Estudio_Vo("tecnologia en peluqueria+maniquiur, y pediquiuur","de lunes a viernes a las 3 am","sena galan sgasdg"));
+        lista_Estudios.add(new Estudio_Vo("Excel basico","40 horas ","lunes, miercoles y viernes 7 am 11 am"));
+        lista_Estudios.add(new Estudio_Vo("ingles basico","60 horas","martes a jueves 2 pm 6 pm"));
+        lista_Estudios.add(new Estudio_Vo("contabilidad","80 horas","lunes a viernes  6pm 10 pm"));
+        lista_Estudios.add(new Estudio_Vo("Photoshop","40 horas ","viernes 8 am 1 pm"));
+        lista_Estudios.add(new Estudio_Vo("java ","120 horas","lunes a viernes 8am 12 m"));
+        lista_Estudios.add(new Estudio_Vo("php","60 horas","martes y jueves 8am 12m"));
+        lista_Estudios.add(new Estudio_Vo("html5","30 horas ","miercoles 7am 11am"));
+        lista_Estudios.add(new Estudio_Vo("Phyton","80 horas","jueves 1 pm 7pm "));
 
     }
 
@@ -123,6 +124,11 @@ public class P_AcademicoFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        if(context instanceof  Activity){
+            this.activity=(Activity) context;
+            interfaceComunicaFragment=(IComunicaFragments) this.activity;
+        }
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {

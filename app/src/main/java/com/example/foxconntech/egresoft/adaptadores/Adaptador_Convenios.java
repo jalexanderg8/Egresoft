@@ -16,74 +16,66 @@ import java.util.ArrayList;
  * Created by lenovo on 6/09/2017.
  */
 
-public class Adaptador_Convenios extends RecyclerView.Adapter<Adaptador_Convenios.ViewHolder> implements View.OnClickListener
+public class Adaptador_Convenios extends RecyclerView.Adapter<Adaptador_Convenios.ViewHolderConvenios> implements View.OnClickListener
 {
 
-    ArrayList<Convenio_vo> arrayList;
+    ArrayList<Convenio_vo> listaConvenios;
 
-    public Adaptador_Convenios(ArrayList<Convenio_vo> arrayList) {
-        this.arrayList = arrayList;
+    private View.OnClickListener listener;
+
+    public Adaptador_Convenios(ArrayList<Convenio_vo> listaConvenios) {
+        this.listaConvenios = listaConvenios;
     }
 
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolderConvenios onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_convenio,null,false);
-        return new ViewHolder(view);
+
+        view.setOnClickListener(this);
+
+        return new ViewHolderConvenios(view);
+
+
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolderConvenios holder, int position) {
 
-        holder.nombre.setText(arrayList.get(position).getNombre());
-        holder.descripcion.setText(arrayList.get(position).getDescripcion());
-        holder.contacto.setText(arrayList.get(position).getContacto());
-        holder.imagen.setImageResource(arrayList.get(position).getFoto());
+        holder.nombre.setText(listaConvenios.get(position).getNombre());
+        holder.descripcion.setText(listaConvenios.get(position).getDescripcion());
+        holder.contacto.setText(listaConvenios.get(position).getContacto());
+        holder.imagen.setImageResource(listaConvenios.get(position).getFoto());
 
     }
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return listaConvenios.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
     }
 
     @Override
     public void onClick(View v) {
 
+        if(listener!=null){
+            listener.onClick(v);
+        }
     }
 
-/*
-
-    private void animateCircularReveal(View itemView) {
-        int centerX=0;
-        int centerY=0;
-        int startRadius=0;
-        int endRadius=Math.max(itemView.getWidth(), itemView.getHeight());
-        Animator animation= ViewAnimationUtils.createCircularReveal(itemView,centerX,centerY,startRadius,endRadius);
-        itemView.setVisibility(View.VISIBLE);
-        animation.start();
-    }
-
-    @Override
-    public void onViewAttachedToWindow(View view) {
-       // super.onViewAttachedToWindow(view);
-        animateCircularReveal(view);
-    }
-
-    @Override
-    public void onViewDetachedFromWindow(View view) {
-
-    }
-*/
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolderConvenios extends RecyclerView.ViewHolder {
 
         TextView nombre;
         TextView descripcion;
         TextView contacto;
         ImageView imagen;
 
-        public ViewHolder(View itemView) {
+        public ViewHolderConvenios(View itemView) {
             super(itemView);
             nombre = (TextView) itemView.findViewById(R.id.nombreConvenio);
             descripcion = (TextView) itemView.findViewById(R.id.informacion_Convenio);

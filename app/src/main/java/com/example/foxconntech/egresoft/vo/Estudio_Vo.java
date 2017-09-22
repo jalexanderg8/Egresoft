@@ -1,10 +1,12 @@
 package com.example.foxconntech.egresoft.vo;
 
+import java.io.Serializable;
+
 /**
  * Created by JULIAN HENAO on 21/08/2017.
  */
 
-public class Estudio_Vo {
+public class Estudio_Vo implements Serializable{
 
     private String nombre;
     private String horarios;

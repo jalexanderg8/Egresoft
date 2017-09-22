@@ -26,15 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--  <ImageView
-                android:id="@+id/Foto_P_Academico"
-                android:layout_width="86dp"
-                android:layout_height="76dp"
-                android:layout_column="0"
-                android:layout_row="0"
-                app:srcCompat="@mipmap/ic_launcher"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true" />
+
 -->
             <TextView
                 android:id="@+id/nombre_Estudio"
@@ -44,7 +36,6 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="11dp"
-                android:text="kasdjhfaosdifuhgaosdif"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -57,7 +48,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignStart="@+id/nombre_Estudio"
                 android:layout_below="@+id/nombre_Estudio"
-                android:text="jjjjjjjjjjjjjjjjjjjj"
                 android:textSize="10dp"
                 android:textStyle="italic" />
 
@@ -68,7 +58,6 @@
                 android:layout_alignLeft="@+id/direccion_Estudio"
                 android:layout_alignStart="@+id/direccion_Estudio"
                 android:layout_below="@+id/direccion_Estudio"
-                android:text="hhhhhhhhhhhhhhhhhhhh"
                 android:textSize="10dp"
                 android:textStyle="bold" />
 

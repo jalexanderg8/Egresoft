@@ -1,34 +1,26 @@
 package com.example.foxconntech.egresoft.fragments;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.foxconntech.egresoft.R;
-import com.example.foxconntech.egresoft.adaptadores.Adaptador_Convenios;
-import com.example.foxconntech.egresoft.interfaces.IComunicaFragments;
-import com.example.foxconntech.egresoft.vo.Convenio_vo;
-
-import java.io.Serializable;
-import java.util.ArrayList;
+import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FragmentConvenio.OnFragmentInteractionListener} interface
+ * {@link DetalleAcademico.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FragmentConvenio#newInstance} factory method to
+ * Use the {@link DetalleAcademico#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentConvenio extends Fragment implements Serializable{
+public class DetalleAcademico extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -40,12 +32,12 @@ public class FragmentConvenio extends Fragment implements Serializable{
 
     private OnFragmentInteractionListener mListener;
 
-    RecyclerView Convenios_Recycler;
-    ArrayList<Convenio_vo> ListaConvenios;
-    Activity activity;
-    IComunicaFragments interfaceComunicaFragment;
+    TextView nombreCurso;
+    TextView horarioCurso;
+    TextView descripcionCurso;
 
-    public FragmentConvenio() {
+
+    public DetalleAcademico() {
         // Required empty public constructor
     }
 
@@ -55,11 +47,11 @@ public class FragmentConvenio extends Fragment implements Serializable{
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentConvenio.
+     * @return A new instance of fragment DetalleAcademico.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentConvenio newInstance(String param1, String param2) {
-        FragmentConvenio fragment = new FragmentConvenio();
+    public static DetalleAcademico newInstance(String param1, String param2) {
+        DetalleAcademico fragment = new DetalleAcademico();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -79,44 +71,26 @@ public class FragmentConvenio extends Fragment implements Serializable{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+       View vista=inflater.inflate(R.layout.fragment_detalle_academico, container, false);
+
+        nombreCurso=vista.findViewById(R.id.nombreEstudioDetalle);
+        horarioCurso=vista.findViewById(R.id.direccionEstudioDetalle);
+        descripcionCurso=vista.findViewById(R.id.horariosEstudioDetalle);
+
+        Bundle objetoEstudio=getArguments();
+        Estudio_Vo estudio_vo=null;
+
+        if(objetoEstudio!=null){
+
+            estudio_vo=(Estudio_Vo)objetoEstudio.getSerializable("objeto");
+            nombreCurso.setText(estudio_vo.getNombre());
+            horarioCurso.setText(estudio_vo.getHorarios());
+            descripcionCurso.setText(estudio_vo.getDireccion());
+        }
 
 
-View vista=inflater.inflate(R.layout.fragment_fragment_convenio, container, false);
-
-Convenios_Recycler=vista.findViewById(R.id.recycler_Convenios);
-
-        llenarLista();
-
-       Convenios_Recycler.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        Adaptador_Convenios miAdaptador=new Adaptador_Convenios(ListaConvenios);
-        Convenios_Recycler.setAdapter(miAdaptador);
-
-        miAdaptador.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Toast.makeText(getContext(),"esta en:"+ListaConvenios.get(Convenios_Recycler
-                        .getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_SHORT).show();
-
-                interfaceComunicaFragment.enviarConvenio(ListaConvenios.get(Convenios_Recycler.
-                        getChildAdapterPosition(view)));
-            }
-        });
 
         return vista;
-    }
-
-    private void llenarLista() {
-        ListaConvenios=new ArrayList<>();
-        ListaConvenios.add(new Convenio_vo("Universidad del quindio","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.uniquindio));
-        ListaConvenios.add(new Convenio_vo("EAM","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.eam));
-        ListaConvenios.add(new Convenio_vo("Universidad la grancolombia","homologa 5 semestres","pepito arturo sandoval 311544888",R.drawable.granco));
-        ListaConvenios.add(new Convenio_vo("Remington","homologa 5 semestres","2pepito arturo sandoval 311544888",R.drawable.remington));
-
-
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -129,11 +103,6 @@ Convenios_Recycler=vista.findViewById(R.id.recycler_Convenios);
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
-        if(context instanceof  Activity){
-            this.activity=(Activity) context;
-            interfaceComunicaFragment=(IComunicaFragments) this.activity;
-        }
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
