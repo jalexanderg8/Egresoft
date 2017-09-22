@@ -26,6 +26,7 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EGRESADO);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_CONVENIO);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EVENTO);
+
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_NOTICIAS);
 
 

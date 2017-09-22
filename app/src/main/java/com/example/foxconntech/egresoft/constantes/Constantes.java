@@ -46,7 +46,7 @@ import android.provider.BaseColumns;
 
         public static final String TABLA_NOTICIA="noticia";
         public static final String COLUMNA_NOMBRE_NOTICIA="nombre_noticia";
-        public static final String COLUMNA_DESCRIPCION="descripcion_noticia";
+        public static final String COLUMNA_DESCRIPCION_NOTICIA="descripcion_noticia";
         public  static final int COLUMNA_IMAGEN_NOTICIA=0;
 
         public static final String TEXT_TYPE = " TEXT ";
@@ -56,7 +56,7 @@ import android.provider.BaseColumns;
         public static final String CREAR_TABLA_NOTICIAS=
                 "CREATE TABLE "+TABLA_NOTICIA+" ("+
                         COLUMNA_NOMBRE_NOTICIA+TEXT_TYPE+NOT_NULL+COMMA_SEP+
-                        COLUMNA_DESCRIPCION+TEXT_TYPE+NOT_NULL+COMMA_SEP+
+                        COLUMNA_DESCRIPCION_NOTICIA+TEXT_TYPE+NOT_NULL+COMMA_SEP+
                         COLUMNA_IMAGEN_NOTICIA+" INT "+NOT_NULL+" )";
 
         public static final String BORRAR_TABLA_NOTICIAS =

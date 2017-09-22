@@ -1,6 +1,10 @@
 package com.example.foxconntech.egresoft.fragments;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +18,10 @@ import android.widget.Toast;
 
 import com.example.foxconntech.egresoft.adaptadores.Adaptador_Eventos;
 import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.conexion.Conexion;
+import com.example.foxconntech.egresoft.constantes.Constantes;
 import com.example.foxconntech.egresoft.vo.Evento_Vo;
+import com.example.foxconntech.egresoft.vo.Noticia_vo;
 
 import java.util.ArrayList;
 
@@ -39,9 +46,12 @@ public class EventosFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     ArrayList<Evento_Vo> ListaEventos;
-RecyclerView EventosRecycler;
+    ArrayList<Noticia_vo>ListaNoticias;
+    RecyclerView EventosRecycler;
     Fragment miFragment;
- Button registra;
+     Button registra;
+    Conexion miConexion;
+    SQLiteDatabase bd;
 
     public EventosFragment() {
         // Required empty public constructor
@@ -80,7 +90,7 @@ RecyclerView EventosRecycler;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
+ View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
 
 
         registra=vista.findViewById(R.id.btnRegistrarAlEvento);
@@ -102,13 +112,13 @@ View vista=inflater.inflate(R.layout.fragment_eventos, container, false);
         return vista;
     }
 
+
     private void llenarLista() {
         ListaEventos=new ArrayList<>();
         ListaEventos.add(new Evento_Vo("evento de navidadcccccccccccccccc","sena centro de comercio y turismo","43 de octubre",R.drawable.navidad));
         ListaEventos.add(new Evento_Vo("en tic confio","centro de convenviones armenia quindio","4 de septiembre",R.drawable.tic));
         ListaEventos.add(new Evento_Vo("novenas de navidad","sena quindio","24 de diciembre",R.drawable.navidad));
         ListaEventos.add(new Evento_Vo("novenas de navidad","sena quindio","24 de diciembre",R.drawable.logo_sena_verde));
-
 
 
     }
