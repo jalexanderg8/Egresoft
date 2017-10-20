@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:design="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/principal"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.foxconntech.egresoft.activitys.Principal">
 
 
@@ -16,7 +15,7 @@
             android:id="@+id/barra_superior"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#0BB634"
+            android:background="@drawable/barrasuperior"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:orientation="horizontal" />
 
@@ -38,7 +37,6 @@
             android:layout_alignParentStart="true"
           >
 
-
         </FrameLayout>
 
     </ScrollView>
@@ -52,7 +50,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/contenedor"
         android:background="#0BB634">
 
 

@@ -21,27 +21,10 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="90sp"
+            android:layout_height="40dp"
             android:id="@+id/relativeLayout"
             android:layout_alignBottom="@+id/FotoConvenio"
             android:background="@color/fondo_transparente">
-
-            <TextView
-                android:id="@+id/nombre_restaurante"
-                android:layout_width="wrap_content"
-                android:layout_height="45sp"
-                android:layout_gravity="left|bottom"
-                android:paddingLeft="16dp"
-                android:text="Nombre PgPaurante"
-                android:textColor="@android:color/white"
-                android:textSize="25sp"
-                android:textStyle="italic"
-                android:layout_above="@+id/nombreConvenio"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
 
 
             <TextView
@@ -58,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="asfdgdsag"
+                android:visibility="invisible"
                 android:textColor="@color/white"
                 android:layout_below="@+id/nombreConvenio"/>
 
@@ -66,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="asfdgdsag"
+                android:visibility="invisible"
                 android:textColor="@color/white"
                 android:layout_below="@+id/informacion_Convenio"/>
 

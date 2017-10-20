@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context="com.example.foxconntech.egresoft.fragments.fragments_splash.tres">
 
@@ -21,7 +21,7 @@
         android:layout_height="100dp"
         android:text="si ya eres egresado, tendras un menu inferior como el siguiente"
         android:textSize="25dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:gravity="center_horizontal"
         android:id="@+id/textView" />
 
@@ -44,31 +44,31 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/portal_laboral" />
+                app:srcCompat="@drawable/portal_laboral_fondo_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/oferta_academica" />
+                app:srcCompat="@drawable/oferta_academica_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/eventos" />
+                app:srcCompat="@drawable/eventos_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/icono_convenios" />
+                app:srcCompat="@drawable/convenios_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/contactenos" />
+                app:srcCompat="@drawable/contactenos_blanco" />
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         android:text="si no lo eres, visualizaras uno como este:"
         android:textSize="25dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_below="@+id/scrollarriba"
         android:gravity="center_horizontal"
         android:id="@+id/textView3" />
@@ -102,31 +102,31 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/oferta_academica" />
+                app:srcCompat="@drawable/oferta_academica_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/eventos" />
+                app:srcCompat="@drawable/eventos_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/icono_convenios" />
+                app:srcCompat="@drawable/convenios_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/informcion" />
+                app:srcCompat="@drawable/infor_blanco" />
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:srcCompat="@drawable/icono_salir" />
+                app:srcCompat="@drawable/icono_salir_blanco" />
 
         </LinearLayout>
     </HorizontalScrollView>

@@ -1,6 +1,5 @@
 package com.example.foxconntech.egresoft.activitys;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,17 +8,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.foxconntech.egresoft.R;
-import com.example.foxconntech.egresoft.fragments.fragments_splash.cuatro;
-import com.example.foxconntech.egresoft.fragments.fragments_splash.dos;
-import com.example.foxconntech.egresoft.fragments.fragments_splash.tres;
-import com.example.foxconntech.egresoft.fragments.fragments_splash.uno;
+import com.example.foxconntech.egresoft.fragments.Fragmets_Registro.formulario1;
+import com.example.foxconntech.egresoft.fragments.Fragmets_Registro.formulario2;
 
-public class Splash extends AppCompatActivity implements uno.OnFragmentInteractionListener,dos.OnFragmentInteractionListener
-,tres.OnFragmentInteractionListener,cuatro.OnFragmentInteractionListener{
+public class RegistroYActualizacionDeDatos extends AppCompatActivity implements formulario1.OnFragmentInteractionListener,formulario2.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -36,10 +35,13 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
      */
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_registro_yactualizacion_de_datos);
+
+
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -49,32 +51,44 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+    }
 
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    if (Principal.info){
-                        finish();
-                    }else{
-                        finish();
-                        Intent intento = new Intent(Splash.this, Login.class);
-                        startActivity(intento);
 
-                    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_registro_yactualizacion_de_datos, menu);
+        return true;
+    }
 
-                }
-            }
-        }).start();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void onClick(View view) {
+        if (R.id.btnCancelar==view.getId()){
+            finish();
+        }else if(R.id.btnRegistrar==view.getId()){
+            finish();
+            Toast.makeText(getApplicationContext(),"Registrado al Evento",Toast.LENGTH_LONG).show();
+
+        }
     }
 
     /**
@@ -98,16 +112,10 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
             Fragment fragment=null;
 
             switch (sectionNumber){
-                case 1:fragment=new uno();
+                case 1:fragment=new formulario1();
                     break;
 
-                case 2:fragment=new dos();
-                    break;
-
-                case 3:fragment=new tres();
-                    break;
-
-                case 4:fragment=new cuatro();
+                case 2:fragment=new formulario2();
                     break;
             }
 
@@ -117,7 +125,7 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_splash, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_registro_yactualizacion_de_datos, container, false);
             return rootView;
         }
     }
@@ -142,7 +150,7 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 4;
+            return 2;
         }
 
         @Override
@@ -152,10 +160,8 @@ public class Splash extends AppCompatActivity implements uno.OnFragmentInteracti
                     return "SECTION 1";
                 case 1:
                     return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-                case 3:
-                    return "SECTION 4";
+             /*   case 2:
+                    return "SECTION 3";*/
             }
             return null;
         }

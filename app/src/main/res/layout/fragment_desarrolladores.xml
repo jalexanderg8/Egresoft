@@ -5,197 +5,172 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
-    tools:context="com.example.foxconntech.egresoft.fragments.Desarrolladores">
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardMiguel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="5dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:background="@drawable/naranjados"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imagen"
-                android:layout_width="wrap_content"
-                android:layout_height="142dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                app:srcCompat="@drawable/miguel" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imagen"
-                android:text="miguel angel henao hoyos"
-                android:textSize="20dp"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/rol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/textView8"
-                android:layout_alignRight="@+id/textView8"
-                android:layout_below="@+id/textView8"
-                android:layout_marginEnd="51dp"
-                android:layout_marginRight="51dp"
-                android:text="Desarrollador"
-                android:textSize="20dp"
-                android:textStyle="italic" />
+    tools:context="com.example.foxconntech.egresoft.fragments.Desarrolladores"
+    android:weightSum="1">
 
 
-            <TextView
-                android:id="@+id/horarios_Estudio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/rol"
-                android:layout_alignStart="@+id/rol"
-                android:layout_below="@+id/rol"
-                android:text="3116197623"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:background="@drawable/origami_verde">
 
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/imagenjaime"
+            android:layout_width="130dp"
+            android:layout_height="122dp"
+            android:layout_toEndOf="@+id/textjaime"
+            android:layout_toRightOf="@+id/textjaime"
+            app:srcCompat="@drawable/jaime" />
 
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="5dp"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textjaime"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/fondonaranja"
-            >
+            android:layout_above="@+id/roljaime"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"
+            android:text="Jaime Alexander Gomez"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="142dp"
-                app:srcCompat="@drawable/junior"
-                android:id="@+id/imageView5"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="miguel angel henao hoyos"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_below="@+id/imageView5"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="Desarrollador"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:layout_below="@+id/textView12"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textView11"
-                android:layout_alignStart="@+id/textView11"
-                android:layout_below="@+id/textView11"
-                android:textSize="20dp"
-                android:text="3114857373" />
-
-
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="5dp"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/roljaime"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/naranjados"
-            >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="142dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                app:srcCompat="@drawable/jaime"
-                android:id="@+id/img" />
-
-            <TextView
-                android:id="@+id/View12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="miguel angel henao hoyos"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_below="@+id/img"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/textV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desarrollador"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:layout_below="@+id/View12"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/textVi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textV"
-                android:layout_alignStart="@+id/textV"
-                android:layout_below="@+id/textV"
-                android:textSize="20dp"
-                android:text="3114857373" />
+            android:layout_alignBottom="@+id/imagenjaime"
+            android:layout_alignLeft="@+id/textjaime"
+            android:layout_alignStart="@+id/textjaime"
+            android:layout_marginBottom="26dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:text="Desarrollador"
+            android:textSize="20dp"
+            android:textStyle="italic" />
 
 
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/celjaime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagenjaime"
+            android:layout_alignLeft="@+id/roljaime"
+            android:layout_alignStart="@+id/roljaime"
+            android:text="3116197623"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+
+        android:background="@drawable/naranja_oigami">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="130dp"
+            android:layout_height="122dp"
+            app:srcCompat="@drawable/miguel"
+            android:layout_alignBottom="@+id/textView13"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textVi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="miguel angel henao hoyos"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_above="@+id/textView11"
+            android:layout_toRightOf="@+id/imageView6"
+            android:layout_toEndOf="@+id/imageView6" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desarrollador"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/textView13"
+            android:layout_alignEnd="@+id/textView13"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp" />
 
 
-    </android.support.v7.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="3116197623"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/textView13"
+            android:layout_marginRight="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@+id/textVi"
+            android:layout_alignRight="@+id/textVi"
+            android:layout_alignEnd="@+id/textVi" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:background="@drawable/origami_verde">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:layout_toEndOf="@+id/textView8"
+            android:layout_toRightOf="@+id/textView8"
+            app:srcCompat="@drawable/junior" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginStart="43dp"
+            android:text="Jhon Jairo Hincapie"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_above="@+id/rol"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/rol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagen"
+            android:layout_alignLeft="@+id/textView8"
+            android:layout_alignStart="@+id/textView8"
+            android:layout_marginBottom="26dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:text="Desarrollador"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+
+
+        <TextView
+            android:id="@+id/horarios_Estudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagen"
+            android:layout_alignLeft="@+id/rol"
+            android:layout_alignStart="@+id/rol"
+            android:text="3116197623"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 </LinearLayout>
