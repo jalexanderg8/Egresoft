@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.foxconntech.egresoft.fragments.Fragmets_Registro.formulario2">
+
+
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bordes_campos_texto"
+        android:hint="Contraseña"
+        android:textColorHint="@color/white"/>
+
+    <EditText
+        android:id="@+id/repitacontraseña"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bordes_campos_texto"
+        android:hint="Repita contraseña"
+        android:textColorHint="@color/white"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bordes_btn_verde"
+            android:text="Registrar"
+            android:onClick="onClick"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bordes_btn_rojo"
+            android:text="Cancelar"
+            android:onClick="onClick"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

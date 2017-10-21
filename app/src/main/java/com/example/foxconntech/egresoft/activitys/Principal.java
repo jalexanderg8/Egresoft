@@ -133,7 +133,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
     public void onClick(View view) {
         if (R.id.btnRegistrarAlEvento==view.getId()){
-            Intent  i=new Intent(this,Registro.class);
+            Intent  i=new Intent(this,RegistroYActualizacionDeDatos.class);
             startActivity(i);
         }
     }
