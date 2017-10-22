@@ -1,7 +1,10 @@
 package com.example.foxconntech.egresoft.activitys;
 
+import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -43,6 +46,8 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -50,6 +55,8 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
 
 
     }
@@ -70,11 +77,14 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.itemPaginaPrincipal) {
+
+            Intent i=new Intent(getApplicationContext(),Login.class);
+            startActivity(i);
+
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @Override
@@ -100,7 +110,8 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
          * number.
          */
         public static Fragment newInstance(int sectionNumber) {
-            Fragment fragment =null;
+            Fragment fragment = null;
+
 
             switch (sectionNumber){
                 case 1:fragment=new uno();
@@ -115,6 +126,7 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
                 case 4:fragment=new cuatro();
                     break;
             }
+
 
             return fragment;
         }
@@ -160,7 +172,7 @@ public class Slider extends AppCompatActivity implements uno.OnFragmentInteracti
                     return "SECTION 2";
                 case 2:
                     return "SECTION 3";
-                case 4:
+                case 3:
                     return "SECTION 4";
             }
             return null;

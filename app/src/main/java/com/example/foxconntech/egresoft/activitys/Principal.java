@@ -85,7 +85,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
                         break;
                     case R.id.informacionI:
 
-                        llamarSplash();
+                        llamarSlider();
 
                         break;
                 }
@@ -95,9 +95,9 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         });
     }
 
-    private void llamarSplash() {
+    private void llamarSlider() {
         info=true;
-        miIntent=new Intent(getApplicationContext(),Splash.class);
+        miIntent=new Intent(getApplicationContext(),Slider.class);
         startActivity(miIntent);
     }
 
@@ -112,7 +112,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         if (item.getItemId()==R.id.cerrar_sesion){
            finish();
         }else if (item.getItemId()==R.id.informacion){
-            llamarSplash();
+            llamarSlider();
         }else if (item.getItemId()==R.id.acercaDe){
             miFragment=new Desarrolladores();
             getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();        }

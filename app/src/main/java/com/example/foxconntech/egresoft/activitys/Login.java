@@ -19,18 +19,11 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Log.i("prueba","oncreate");
-
-
-        Log.i("prueba","desps contraseña");
             setContentView(R.layout.activity_login);
 
         contraseña= (EditText) findViewById(R.id.contraseña);
-        Log.i("prueba","desps setContentView");
-        Log.i("prueba","valor: "+contraseña);
-        String Contraseña=contraseña.getText().toString();
-        Log.i("prueba",Contraseña);
+
+
     }
 
     public void onClick(View view) {
