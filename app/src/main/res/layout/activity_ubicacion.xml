@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foxconntech.egresoft.activitys.Ubicacion" />
+
+    <Button
+        android:id="@+id/btnZoomMas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZOOM +"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="onClick"
+        android:background="@drawable/bordes_btn_verde"
+        android:layout_alignBaseline="@+id/btnZoomMenos"
+        android:layout_alignBottom="@+id/btnZoomMenos"
+        android:layout_toLeftOf="@+id/btnZoomMenos"
+        android:layout_toStartOf="@+id/btnZoomMenos" />
+
+    <Button
+        android:id="@+id/btnZoomMenos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZOOM -"
+        android:onClick="onClick"
+        android:background="@drawable/bordes_btn_verde"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

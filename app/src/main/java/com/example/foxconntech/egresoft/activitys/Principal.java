@@ -1,6 +1,7 @@
 package com.example.foxconntech.egresoft.activitys;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -45,12 +46,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
         menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
 
-
-      if (Login.tipo.equals("egresado")){
-      menu.inflateMenu(R.menu.menu_egresado);
-     }else if (Login.tipo.equals("invitado")){
-    menu.inflateMenu(R.menu.menu_invitado);
-     }
+        validarSession();
 
         menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
@@ -95,6 +91,22 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         });
     }
 
+    private void validarSession() {
+
+        SharedPreferences preferencias=getSharedPreferences("egresado",MODE_PRIVATE);
+
+        String user=preferencias.getString("usuario","vacio");
+        String pass=preferencias.getString("pass","vacio");
+
+        if(!user.equals("vacio")&&!pass.equals("vacio")){
+
+            menu.inflateMenu(R.menu.menu_egresado);
+        }else{
+
+            menu.inflateMenu(R.menu.menu_invitado);
+        }
+    }
+
     private void llamarSlider() {
         info=true;
         miIntent=new Intent(getApplicationContext(),Slider.class);
@@ -107,12 +119,16 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.cerrar_sesion){
-           finish();
+            cerrarSession();
+
         }else if (item.getItemId()==R.id.informacion){
-            llamarSlider();
+            Intent i=new Intent(getApplicationContext(),Ubicacion.class);
+            startActivity(i);
+
         }else if (item.getItemId()==R.id.acercaDe){
             miFragment=new Desarrolladores();
             getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();        }
@@ -120,15 +136,23 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+    private void cerrarSession() {
+
+        SharedPreferences preferencias=getSharedPreferences("egresado",MODE_PRIVATE);
+        preferencias.edit().clear().commit();
+
+        Intent i=new Intent(getApplicationContext(),Login.class);
+        startActivity(i);
+    }
+
+
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (Login.tipo.equals("egresado")){
+
+
             getMenuInflater().inflate(R.menu.menu_superior,menu);
             return true;
 
-        }else{
-            return false;
-        }
+
     }
 
     public void onClick(View view) {

@@ -4,20 +4,23 @@
     tools:context="yo.action.MainActivity">
     <item
         android:id="@+id/cerrar_sesion"
+        android:icon="@drawable/item_cerrar_sesion"
         android:orderInCategory="100"
-        android:title="cerrar_Sesion"
-        app:showAsAction="never|" />
+        android:title="Cerrar Session"
+        app:showAsAction="always|" />
 
     <item
         android:id="@+id/informacion"
+        android:icon="@drawable/item_contacto"
         android:orderInCategory="100"
-        android:title="informacion"
-        app:showAsAction="never" />
+        android:title="Info Contacto"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/acercaDe"
+        android:icon="@drawable/item_acerca_de"
         android:orderInCategory="100"
-        android:title="Acerca de:"
-        app:showAsAction="never" />
+        android:title="Acerca de"
+        app:showAsAction="always" />
 
 </menu>

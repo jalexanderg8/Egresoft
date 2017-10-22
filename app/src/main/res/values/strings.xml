@@ -9,4 +9,5 @@
     <string name="title_activity_registro_yactualizacion_de_datos">RegistroYActualizacionDeDatos
     </string>
     <string name="title_activity_slider">Tutorial Egresoft</string>
+    <string name="title_activity_ubicacion">Map</string>
 </resources>

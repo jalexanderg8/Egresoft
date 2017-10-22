@@ -6,22 +6,48 @@ package com.example.foxconntech.egresoft.egresadoVo;
 
     public class PersonaVo {
 
+        private String idEgresado;
+        private String tipoDocumento;
         private String nombres;
         private String apellidos;
-        private String nombre_titulacion;
         private String telefono;
         private String telefono_alterno;
         private String email;
         private String email_alterno;
+        private String lugarResidencia;
+        private String contraseña;
+        private String modalidad;
+        private String tipoTitulacion;
+        private String numeroFicha;
+        private String fechaInicio;
+        private String fechaFin;
+        private String nombre_titulacion;
 
-    public PersonaVo(String nombres, String apellidos, String nombre_titulacion, String telefono, String telefono_alterno, String email, String email_alterno) {
+    public PersonaVo(String idEgresado, String tipoDocumento, String nombres, String apellidos, String email, String contraseña) {
+        this.idEgresado = idEgresado;
+        this.tipoDocumento = tipoDocumento;
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.nombre_titulacion = nombre_titulacion;
-        this.telefono = telefono;
-        this.telefono_alterno = telefono_alterno;
         this.email = email;
-        this.email_alterno = email_alterno;
+        this.contraseña=contraseña;
+
+
+    }
+
+    public String getIdEgresado() {
+        return idEgresado;
+    }
+
+    public void setIdEgresado(String idEgresado) {
+        this.idEgresado = idEgresado;
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public String getNombres() {
@@ -38,14 +64,6 @@ package com.example.foxconntech.egresoft.egresadoVo;
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-
-    public String getNombre_titulacion() {
-        return nombre_titulacion;
-    }
-
-    public void setNombre_titulacion(String nombre_titulacion) {
-        this.nombre_titulacion = nombre_titulacion;
     }
 
     public String getTelefono() {
@@ -79,4 +97,70 @@ package com.example.foxconntech.egresoft.egresadoVo;
     public void setEmail_alterno(String email_alterno) {
         this.email_alterno = email_alterno;
     }
+
+    public String getLugarResidencia() {
+        return lugarResidencia;
+    }
+
+    public void setLugarResidencia(String lugarResidencia) {
+        this.lugarResidencia = lugarResidencia;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public String getModalidad() {
+        return modalidad;
+    }
+
+    public void setModalidad(String modalidad) {
+        this.modalidad = modalidad;
+    }
+
+    public String getTipoTitulacion() {
+        return tipoTitulacion;
+    }
+
+    public void setTipoTitulacion(String tipoTitulacion) {
+        this.tipoTitulacion = tipoTitulacion;
+    }
+
+    public String getNumeroFicha() {
+        return numeroFicha;
+    }
+
+    public void setNumeroFicha(String numeroFicha) {
+        this.numeroFicha = numeroFicha;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public String getNombre_titulacion() {
+        return nombre_titulacion;
+    }
+
+    public void setNombre_titulacion(String nombre_titulacion) {
+        this.nombre_titulacion = nombre_titulacion;
+    }
+
+
 }

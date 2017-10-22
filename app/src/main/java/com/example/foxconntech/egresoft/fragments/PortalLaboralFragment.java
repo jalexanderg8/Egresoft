@@ -74,7 +74,7 @@ public class PortalLaboralFragment extends Fragment {
 
         vista=inflater.inflate(R.layout.fragment_portal_laboral, container, false);
 
-        WebView web=(WebView)vista.findViewById(R.id.miWeb);
+        WebView web= vista.findViewById(R.id.miWeb);
         web.setWebViewClient(new myWebViewClient());
         WebSettings settings= web.getSettings();
         settings.setJavaScriptEnabled(true);
