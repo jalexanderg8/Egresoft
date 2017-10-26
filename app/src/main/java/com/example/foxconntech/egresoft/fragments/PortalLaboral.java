@@ -13,31 +13,31 @@ import android.webkit.WebViewClient;
 
 import com.example.foxconntech.egresoft.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PortalLaboralFragment.OnFragmentInteractionListener} interface
+ * {@link PortalLaboral.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PortalLaboralFragment#newInstance} factory method to
+ * Use the {@link PortalLaboral#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PortalLaboralFragment extends Fragment {
+public class PortalLaboral extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private  static final String url="https://agenciapublicadeempleo.sena.edu.co/spe-web/spe/cartelera";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
+
+
     private OnFragmentInteractionListener mListener;
 
-    View vista;
-    String url="https://agenciapublicadeempleo.sena.edu.co/spe-web/spe/cartelera";
-
-    public PortalLaboralFragment() {
+    public PortalLaboral() {
         // Required empty public constructor
     }
 
@@ -47,11 +47,11 @@ public class PortalLaboralFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PortalLaboralFragment.
+     * @return A new instance of fragment PortalLaboral.
      */
     // TODO: Rename and change types and number of parameters
-    public static PortalLaboralFragment newInstance(String param1, String param2) {
-        PortalLaboralFragment fragment = new PortalLaboralFragment();
+    public static PortalLaboral newInstance(String param1, String param2) {
+        PortalLaboral fragment = new PortalLaboral();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -71,23 +71,30 @@ public class PortalLaboralFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View vista=inflater.inflate(R.layout.fragment_portal_laboral, container, false);
 
-        vista=inflater.inflate(R.layout.fragment_portal_laboral, container, false);
-
-        WebView web= vista.findViewById(R.id.miWeb);
-        web.setWebViewClient(new myWebViewClient());
-        WebSettings settings= web.getSettings();
+        WebView webView=vista.findViewById(R.id.webView);
+        webView.setWebViewClient(new MyWebViewClient());
+        WebSettings settings=webView.getSettings();
         settings.setJavaScriptEnabled(true);
-        web.loadUrl(url);
+        webView.loadUrl(url);
+
+
+
+
+
 
         return vista;
     }
-    private class myWebViewClient extends WebViewClient{
+    private class MyWebViewClient extends WebViewClient {
 
         public boolean shouldOverrideUrlLoading(WebView view,String url){
 
             view.loadUrl(url);
+
             return true;
+
         }
     }
 
@@ -129,4 +136,6 @@ public class PortalLaboralFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/backgroud"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foxconntech.egresoft.activitys.ActualizarDatos">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="40dp"
+                android:text="Actualizar Datos "
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtTipoDocumento"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_tipo_documento"
+                    android:hint="  Tipo Documento"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtNumeroDocumento"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_numero_documento"
+                    android:hint="  Numero Documento"
+                    android:inputType="number"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtNombres"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_nombres"
+                    android:hint="  Nombres"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtApellidos"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_apellidos"
+                    android:hint="  Apellidos"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtEmailPrincipal"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_email"
+                    android:hint="  Email Principal"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtTelefonoPrincipal"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_telefono"
+                    android:hint="  Telefono Principal"
+                    android:inputType="phone"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtTelefonoAlterno"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_telefono_alterno"
+                    android:hint="  Telefono Alterno"
+                    android:inputType="phone"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtEmailAlterno"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_email_alterno"
+                    android:hint="  Email Alterno"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtLugarResidencia"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_lugar_residencia"
+                    android:hint="  Ciudad Residencia"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtContraseña"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_seguridad"
+                    android:hint="  Contraseña"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtRepitaContraseña"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_contrasena"
+                    android:hint="  Repita Contraseña"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtTipoTitulacion"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_tipo_titulacion"
+                    android:hint="  Tipo Titulacion"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtNombreTitulacion"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_nombre_titulacion"
+                    android:hint="  Nombre Titulacion"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtNumeroFicha"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_numero_ficha"
+                    android:hint="  Numero Ficha"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/txtModalidad"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_modalidad"
+                    android:hint="  Modalidad"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:layout_marginBottom="1dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/btnFechaInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Inicio"
+                    android:onClick="onClick"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bordes_btn_verde"/>
+
+                <EditText
+                    android:id="@+id/txtFechaInicio"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_fecha_inicio"
+                    android:hint="  Fecha Inicio"
+                    android:inputType="date"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/btnFechaFin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Fin"
+                    android:onClick="onClick"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bordes_btn_verde"/>
+
+                <EditText
+                    android:id="@+id/txtFechaFin"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bordestext"
+                    android:drawableLeft="@drawable/item_fecha_fin"
+                    android:hint="  Fecha Fin"
+                    android:inputType="date"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/divider" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+
+                <Button
+                    android:id="@+id/btnActualizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actualizar"
+                    android:onClick="onClick"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/bordes_btn_verde"/>
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:onClick="onClick"
+                    android:layout_marginLeft="20dp"
+
+                    android:background="@drawable/bordes_btn_verde"/>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

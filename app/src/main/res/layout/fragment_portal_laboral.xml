@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context="com.example.foxconntech.egresoft.fragments.PortalLaboral">
 
+   <WebView
+       android:id="@+id/webView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"></WebView>
 
-    <WebView
-        android:id="@+id/miWeb"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </FrameLayout>

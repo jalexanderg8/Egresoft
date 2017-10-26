@@ -21,14 +21,14 @@ import com.example.foxconntech.egresoft.fragments.DetalleConvenio;
 import com.example.foxconntech.egresoft.fragments.EventosFragment;
 import com.example.foxconntech.egresoft.fragments.FragmentConvenio;
 import com.example.foxconntech.egresoft.fragments.P_AcademicoFragment;
-import com.example.foxconntech.egresoft.fragments.PortalLaboralFragment;
+import com.example.foxconntech.egresoft.fragments.PortalLaboral;
 import com.example.foxconntech.egresoft.interfaces.IComunicaFragments;
 import com.example.foxconntech.egresoft.vo.Convenio_vo;
 import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,
         P_AcademicoFragment.OnFragmentInteractionListener,Desarrolladores.OnFragmentInteractionListener
-,PortalLaboralFragment.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener
+,PortalLaboral.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener
         ,ContactarFragment.OnFragmentInteractionListener,DetalleAcademico.OnFragmentInteractionListener
 ,DetalleConvenio.OnFragmentInteractionListener,IComunicaFragments{
 
@@ -56,7 +56,7 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
                 switch (item.getItemId()) {
 
                     case R.id.laboral:
-                        miFragment=new PortalLaboralFragment();
+                        miFragment=new PortalLaboral();
                         //pLaboral.set
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
                         break;
@@ -71,9 +71,6 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
                     case R.id.Contactenos:
                         miFragment=new ContactarFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
-                        break;
-                    case R.id.salida:
-                        finish();
                         break;
                     case R.id.convenios:
                         miFragment=new FragmentConvenio();

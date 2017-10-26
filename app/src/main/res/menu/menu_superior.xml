@@ -2,12 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="yo.action.MainActivity">
-    <item
-        android:id="@+id/cerrar_sesion"
-        android:icon="@drawable/item_cerrar_sesion"
-        android:orderInCategory="100"
-        android:title="Cerrar Session"
-        app:showAsAction="always|" />
 
     <item
         android:id="@+id/informacion"
@@ -17,10 +11,17 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/cerrar_sesion"
+        android:icon="@drawable/item_cerrar_session"
+        android:title="Cerrar Session"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/acercaDe"
         android:icon="@drawable/item_acerca_de"
         android:orderInCategory="100"
         android:title="Acerca de"
         app:showAsAction="always" />
+
 
 </menu>

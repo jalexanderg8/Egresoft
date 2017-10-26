@@ -21,10 +21,9 @@
         android:title="informacion" />
 
     <item
-        android:id="@+id/salida"
-        android:icon="@drawable/icono_salir"
-        android:title="salir"
-        android:enabled="true"/>
+        android:id="@+id/Contactenos"
+        android:icon="@drawable/contactenos"
+        android:title="Contactenos" />
 
 
 

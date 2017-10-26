@@ -19,44 +19,32 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/nombre"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:hint="ingrese su nombre"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bordes_campos_texto"
-        />
+
+
 
     <EditText
-        android:id="@+id/correo"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bordes_campos_texto"
-        android:hint="ingrese su correo" />
 
-    <EditText
         android:id="@+id/asunto"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:hint="asunto"
+        android:inputType="text"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/bordes_campos_texto"
-        android:layout_marginTop="15dp"
+        android:background="@drawable/bordestext"
+        android:layout_marginTop="15dp" />
 
-        />
+
 
     <EditText
         android:id="@+id/mensaje"
+        android:inputType="textLongMessage"
         android:layout_width="280dp"
         android:layout_height="200dp"
         android:hint="escriba su mensaje"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:background="@drawable/bordes_campos_texto"
+        android:background="@drawable/bordestext"
+        android:layout_marginBottom="40dp"
         android:layout_weight="0.49" />
 
     <Button
@@ -66,6 +54,7 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/bordes_btn_verde"
         android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
         android:text="Enviar" />
 
     <Button
@@ -73,7 +62,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bordes_btn_rojo"
+        android:background="@drawable/bordes_btn_verde"
         android:layout_gravity="center"
         android:text="Cancelar" />
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.conexion.Conexion;
@@ -21,7 +22,7 @@ public class Login extends AppCompatActivity {
 
     Conexion miConexion;
     EditText egresado,contraseña;
-    EgresadoDao egresadoDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
         miConexion=new Conexion(getApplicationContext());
 
         validarSession();
+
 
 
 
@@ -68,15 +70,19 @@ public class Login extends AppCompatActivity {
                    validarEgresado();
 
                }
-
-
-
                break;
             case  R.id.btnInvitado:
 
                 Intent i=new Intent(getApplicationContext(),Principal.class);
                 startActivity(i);
                 break;
+            case R.id.lblRegistrarse:
+
+                Intent in=new Intent(getApplicationContext(),ValidarUsuario.class);
+                startActivity(in);
+                break;
+
+
 
         }
     }
@@ -112,23 +118,6 @@ public class Login extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(),"Error en bd ",Toast.LENGTH_LONG).show();
         }
-
-
-      /* String validar=egresadoDao.verificarEgresado(egresado.getText().toString(),contraseña.getText().toString());
-
-        if(validar.equals("egresado")){
-            Log.d("validar","tres");
-            Intent i = new Intent(getApplicationContext(), Principal.class);
-            startActivity(i);
-            guardarSession();
-        }
-        else if(validar.equals("error")){
-            Log.d("validar","cuatro");
-            Toast.makeText(getApplicationContext(),"No esta Registrado en el sistema ",Toast.LENGTH_LONG).show();
-        }else {
-            Log.d("validar","cinco");
-            Toast.makeText(getApplicationContext(),"Falla en la consulta Excepcion ",Toast.LENGTH_LONG).show();
-        }*/
     }
 
     private void limpiar() {

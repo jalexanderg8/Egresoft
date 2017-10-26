@@ -114,7 +114,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/recuperarContra"
+            android:id="@+id/lblRecuperarContra"
             android:textSize="20dp"
             android:textColor="@color/sena1"
             android:text="Recordar"

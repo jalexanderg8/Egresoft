@@ -23,6 +23,27 @@ package com.example.foxconntech.egresoft.egresadoVo;
         private String fechaFin;
         private String nombre_titulacion;
 
+
+    public PersonaVo(String idEgresado, String tipoDocumento, String nombres, String apellidos, String telefono,
+                     String telefono_alterno, String email, String email_alterno, String lugarResidencia,
+                     String contraseña, String modalidad,String fechaInicio, String fechaFin) {
+
+        this.idEgresado = idEgresado;
+        this.tipoDocumento = tipoDocumento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.telefono_alterno = telefono_alterno;
+        this.email = email;
+        this.email_alterno = email_alterno;
+        this.lugarResidencia = lugarResidencia;
+        this.contraseña = contraseña;
+        this.modalidad = modalidad;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+
+    }
+
     public PersonaVo(String idEgresado, String tipoDocumento, String nombres, String apellidos, String email, String contraseña) {
         this.idEgresado = idEgresado;
         this.tipoDocumento = tipoDocumento;
@@ -32,6 +53,29 @@ package com.example.foxconntech.egresoft.egresadoVo;
         this.contraseña=contraseña;
 
 
+    }
+
+    public PersonaVo(String idEgresado, String tipoDocumento, String nombres, String apellidos, String telefono,
+                     String telefono_alterno, String email, String email_alterno, String lugarResidencia,
+                     String contraseña, String modalidad, String tipoTitulacion, String numeroFicha,
+                     String fechaInicio, String fechaFin, String nombre_titulacion) {
+
+        this.idEgresado = idEgresado;
+        this.tipoDocumento = tipoDocumento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.telefono_alterno = telefono_alterno;
+        this.email = email;
+        this.email_alterno = email_alterno;
+        this.lugarResidencia = lugarResidencia;
+        this.contraseña = contraseña;
+        this.modalidad = modalidad;
+        this.tipoTitulacion = tipoTitulacion;
+        this.numeroFicha = numeroFicha;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.nombre_titulacion = nombre_titulacion;
     }
 
     public String getIdEgresado() {

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/backgroud"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foxconntech.egresoft.activitys.ValidarUsuario">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        android:text="Bienvenido Egresado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black">
+
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/usuario"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:autofillHints="numero documento"
+            android:background="@drawable/bordestext"
+            android:drawableLeft="@drawable/item_seguridad"
+            android:hint="  Numero de Documento"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/divider"
+            android:layout_marginBottom="100dp" />
+
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnValidar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bordes_btn_verde"
+        android:onClick="onClick"
+        android:text="Validar"
+        android:textColor="@color/divider" />
+
+</LinearLayout>
