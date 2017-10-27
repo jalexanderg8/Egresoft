@@ -26,7 +26,7 @@ import com.example.foxconntech.egresoft.constantes.Constantes;
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EGRESADO);
-        db.execSQL("insert into egresado(documento,tipo_documento,nombres,apellidos,email,contrasena) values(55555,'cc','Jaime Alexander','Gomez Alape','jalexanderg8@gmail.com','12345')");
+       // db.execSQL("insert into egresado(documento,tipo_documento,nombres,apellidos,email,contrasena) values(55555,'cc','Jaime Alexander','Gomez Alape','jalexanderg8@gmail.com','12345')");
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_CONVENIO);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_EVENTO);
         db.execSQL(Constantes.DatosEgresados.CREAR_TABLA_NOTICIAS);

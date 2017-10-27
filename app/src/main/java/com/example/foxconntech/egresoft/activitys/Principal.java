@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.foxconntech.egresoft.R;
 import com.example.foxconntech.egresoft.fragments.ContactarFragment;
@@ -26,6 +29,16 @@ import com.example.foxconntech.egresoft.interfaces.IComunicaFragments;
 import com.example.foxconntech.egresoft.vo.Convenio_vo;
 import com.example.foxconntech.egresoft.vo.Estudio_Vo;
 
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 public class Principal extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener,
         P_AcademicoFragment.OnFragmentInteractionListener,Desarrolladores.OnFragmentInteractionListener
 ,PortalLaboral.OnFragmentInteractionListener,FragmentConvenio.OnFragmentInteractionListener
@@ -37,6 +50,10 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
     Fragment miFragment;
     Toolbar barra_superior;
     Intent miIntent;
+    EditText txtAsunto,txtMensaje;
+    String correo,contra;
+    Session session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +64,11 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         menu= (BottomNavigationView) findViewById(R.id.menu_inferior);
 
         validarSession();
+        txtAsunto=findViewById(R.id.txtAsuntoCorreo);
+        txtMensaje=findViewById(R.id.txtMensajeCorreo);
+
+        correo="pruebaegresado@gmail.com";
+        contra="Egresoft2017";
 
         menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
@@ -153,10 +175,80 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
     }
 
     public void onClick(View view) {
-        if (R.id.btnRegistrarAlEvento==view.getId()){
-            Intent  i=new Intent(this,RegistroYActualizacionDeDatos.class);
-            startActivity(i);
+
+        switch (view.getId()){
+
+            case R.id.btnRegistrarAlEvento:
+                Intent  i=new Intent(this,RegistroYActualizacionDeDatos.class);
+                startActivity(i);
+                break;
+
+          /*  case R.id.btnEnviarCorreo:
+
+                StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+                Properties properties=new Properties();
+                properties.put("mail.smtp.host","smtp.googlemail.com");
+                properties.put("mail.smtp.socketFactory.port","465");
+                properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+                properties.put("mail.smtp.auth","true");
+                properties.put("mail.smtp.port","465");
+
+
+                try{
+
+                    session= Session.getDefaultInstance(properties, new Authenticator() {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(correo,contra);
+                        }
+                    });
+
+                    if(session!=null){
+
+
+
+                        Message message=new MimeMessage(session);
+                        message.setFrom(new InternetAddress(correo));
+                        message.setSubject(txtAsunto.getText().toString());
+                        message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("jagomez6605@misena.edu.co"));
+                        message.setContent(txtMensaje.getText().toString(),"text/html; charset=utf-8");
+                        Transport.send(message);
+
+                        Toast.makeText(getApplicationContext(),"Correo enviado con exito ",Toast.LENGTH_LONG).show();
+                        limpiar();
+
+                    }
+
+                }catch (Exception e){
+
+                    Toast.makeText(getApplicationContext(),"Error en el envio ",Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                    limpiar();
+                }
+
+
+
+
+
+
+                break;
+
+            case R.id.btnCancelarCorreo:
+
+                Intent h=new Intent(getApplicationContext(), Principal.class);
+                startActivity(h);
+
+                break;*/
         }
+
+    }
+
+
+    private void limpiar() {
+
+        txtAsunto.setText("");
+        txtMensaje.setText("");
     }
 
     @Override

@@ -1,13 +1,29 @@
 package com.example.foxconntech.egresoft.fragments;
+
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.example.foxconntech.egresoft.R;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.foxconntech.egresoft.R;
+import com.example.foxconntech.egresoft.activitys.Principal;
+
+import java.util.Properties;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 
 /**
@@ -23,6 +39,11 @@ public class ContactarFragment extends Fragment implements View.OnClickListener{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    EditText txtAsunto,txtMensaje;
+    String correo,contra;
+    Session session;
+    Button btnEnviar,btnCancelar;
 
 
     // TODO: Rename and change types of parameters
@@ -68,7 +89,83 @@ public class ContactarFragment extends Fragment implements View.OnClickListener{
 
         View vista=inflater.inflate(R.layout.fragment_contactar_admin, container, false);
 
+        txtAsunto=vista.findViewById(R.id.txtAsuntoCorreo);
+        txtMensaje=vista.findViewById(R.id.txtMensajeCorreo);
+        btnEnviar=vista.findViewById(R.id.btnEnviarCorreo);
+        btnCancelar=vista.findViewById(R.id.btnCancelarCorreo);
 
+        correo="pruebaegresado@gmail.com";
+        contra="Egresoft2017";
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+
+                                             if (txtAsunto.getText().toString().equals("") || txtMensaje.getText().toString().equals("")) {
+
+                                                 Toast.makeText(getContext(), "El campo Asunto y mensaje son obligatorios", Toast.LENGTH_LONG).show();
+                                             } else {
+
+                                                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                                                 StrictMode.setThreadPolicy(policy);
+                                                 Properties properties = new Properties();
+                                                 properties.put("mail.smtp.host", "smtp.googlemail.com");
+                                                 properties.put("mail.smtp.socketFactory.port", "465");
+                                                 properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                                                 properties.put("mail.smtp.auth", "true");
+                                                 properties.put("mail.smtp.port", "465");
+
+
+                                                 try {
+
+                                                     session = Session.getDefaultInstance(properties, new Authenticator() {
+                                                         @Override
+                                                         protected PasswordAuthentication getPasswordAuthentication() {
+                                                             return new PasswordAuthentication(correo, contra);
+                                                         }
+                                                     });
+
+                                                     if (session != null) {
+
+                                                         String asunto = txtAsunto.getText().toString();
+
+                                                         Message message = new MimeMessage(session);
+                                                         message.setFrom(new InternetAddress(correo));
+                                                         message.setSubject(asunto);
+                                                         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("jagomez6605@misena.edu.co"));
+                                                         message.setContent(txtMensaje.getText().toString(), "text/html; charset=utf-8");
+                                                         Transport.send(message);
+                                                         Toast.makeText(getContext(), "Correo enviado con exito ", Toast.LENGTH_LONG).show();
+                                                         limpiar();
+
+
+                                                     }
+
+                                                 } catch (Exception e) {
+
+                                                     e.printStackTrace();
+                                                     Toast.makeText(getContext(), "Correo NO enviado con exito ", Toast.LENGTH_LONG).show();
+                                                     limpiar();
+                                                 }
+
+
+                                                 Intent i = new Intent(getContext(), Principal.class);
+                                                 startActivity(i);
+
+
+                                             }
+                                         }
+                                     });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i=new Intent(getContext(),Principal.class);
+                startActivity(i);
+                limpiar();
+            }
+        });
 
         return vista;
     }
@@ -95,6 +192,12 @@ public class ContactarFragment extends Fragment implements View.OnClickListener{
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    private void limpiar() {
+
+        txtAsunto.setText("");
+        txtMensaje.setText("");
     }
 
     @Override
