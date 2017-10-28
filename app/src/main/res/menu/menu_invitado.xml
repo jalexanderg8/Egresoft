@@ -7,6 +7,12 @@
         android:title="Oferta Academica" />
 
     <item
+        android:id="@+id/laboral"
+        android:icon="@drawable/portal_laboral"
+        android:title="Portal Laboral"
+        android:enabled="true"/>
+
+    <item
         android:id="@+id/Eventos"
         android:icon="@drawable/eventos"
         android:title="Eventos" />
@@ -15,10 +21,6 @@
         android:id="@+id/convenios"
         android:icon="@drawable/icono_convenios"
         android:title="Convenios" />
-    <item
-        android:id="@+id/informacionI"
-        android:icon="@drawable/informcion"
-        android:title="informacion" />
 
     <item
         android:id="@+id/Contactenos"

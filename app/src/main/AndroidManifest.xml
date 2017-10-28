@@ -35,7 +35,8 @@
             android:name=".activitys.Ubicacion"
             android:label="@string/title_activity_ubicacion" />
         <activity android:name=".activitys.ValidarUsuario" />
-        <activity android:name=".activitys.ActualizarDatos"></activity>
+        <activity android:name=".activitys.ActualizarDatos" />
+        <activity android:name=".activitys.RecuperarContra"></activity>
     </application>
 
 </manifest>

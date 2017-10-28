@@ -144,7 +144,7 @@ public class ContactarFragment extends Fragment implements View.OnClickListener{
                                                  } catch (Exception e) {
 
                                                      e.printStackTrace();
-                                                     Toast.makeText(getContext(), "Correo NO enviado con exito ", Toast.LENGTH_LONG).show();
+                                                     Toast.makeText(getContext(), "Correo NO enviado ", Toast.LENGTH_LONG).show();
                                                      limpiar();
                                                  }
 

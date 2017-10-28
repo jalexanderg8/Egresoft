@@ -49,9 +49,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //noinspection GradleCompatible
     compile 'com.google.android.gms:play-services-maps:11.0.4'
-    compile files ('librerias/activation.jar')
-    compile files ('librerias/additionnal.jar')
-    compile files ('librerias/mail.jar')
+    compile files('librerias/activation.jar')
+    compile files('librerias/additionnal.jar')
+    compile files('librerias/mail.jar')
     testCompile 'junit:junit:4.12'
 
 }

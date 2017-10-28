@@ -98,11 +98,6 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
                         miFragment=new FragmentConvenio();
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor,miFragment).commit();
                         break;
-                    case R.id.informacionI:
-
-                        llamarSlider();
-
-                        break;
                 }
 
                 return true;
@@ -126,11 +121,6 @@ public class Principal extends AppCompatActivity implements EventosFragment.OnFr
         }
     }
 
-    private void llamarSlider() {
-        info=true;
-        miIntent=new Intent(getApplicationContext(),Slider.class);
-        startActivity(miIntent);
-    }
 
 
     @Override

@@ -78,9 +78,14 @@ public class Login extends AppCompatActivity {
                 break;
             case R.id.lblRegistrarse:
 
-                Intent in=new Intent(getApplicationContext(),ValidarUsuario.class);
-                startActivity(in);
+                Intent f=new Intent(getApplicationContext(),ValidarUsuario.class);
+                startActivity(f);
                 break;
+
+            case R.id.lblRecuperarContra:
+
+                Intent h=new Intent(getApplicationContext(),RecuperarContra.class);
+                startActivity(h);
 
 
 
@@ -89,36 +94,36 @@ public class Login extends AppCompatActivity {
 
     private void validarEgresado() {
 
-        //egresadoDao=new EgresadoDao();
+
         SQLiteDatabase db=miConexion.getReadableDatabase();
 
 
 
         String parametros[]= {egresado.getText().toString(),contraseña.getText().toString()};
-        String campos[]={Constantes.DatosEgresados.COLUMNA_EMAIL,Constantes.DatosEgresados.COLUMNA_CONTRASEÑA};
+    String campos[]={Constantes.DatosEgresados.COLUMNA_EMAIL,Constantes.DatosEgresados.COLUMNA_CONTRASEÑA};
 
         try{
 
-            Cursor f=db.query(Constantes.DatosEgresados.TABLA_EGRESADO,campos, Constantes.DatosEgresados.COLUMNA_EMAIL+"=? and "+
-                    Constantes.DatosEgresados.COLUMNA_CONTRASEÑA+"=?",parametros,null,null,null);
-           if( f.moveToFirst()){
+        Cursor f=db.query(Constantes.DatosEgresados.TABLA_EGRESADO,campos, Constantes.DatosEgresados.COLUMNA_EMAIL+"=? and "+
+                Constantes.DatosEgresados.COLUMNA_CONTRASEÑA+"=?",parametros,null,null,null);
+        if( f.moveToFirst()){
 
-               guardarSession();
-               Intent i=new Intent(getApplicationContext(),Principal.class);
-               startActivity(i);
+            guardarSession();
+            Intent i=new Intent(getApplicationContext(),Principal.class);
+            startActivity(i);
 
-           }else {
-                Toast.makeText(getApplicationContext(),"No esta registrado en el sistema ",Toast.LENGTH_LONG).show();
-               limpiar();
-           }
-
-           f.close();
-
-        }catch (Exception e){
-
-            Toast.makeText(getApplicationContext(),"Error en bd ",Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(getApplicationContext(),"No esta registrado en el sistema ",Toast.LENGTH_LONG).show();
+            limpiar();
         }
+
+        f.close();
+
+    }catch (Exception e){
+
+        Toast.makeText(getApplicationContext(),"Error en bd ",Toast.LENGTH_LONG).show();
     }
+}
 
     private void limpiar() {
 
